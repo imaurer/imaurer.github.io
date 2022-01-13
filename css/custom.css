@@ -1,5 +1,23 @@
-img.profile {
-    border-radius: 50%;
+div.profile {
     float: left;
+    padding-top: .4em;
+    padding-bottom: 1em;
+}
+
+div.profile img.avatar {
+    border-radius: 50%;
     margin-right: 3em;
+}
+
+div.social {
+    margin-top: -2em;
+    margin-bottom: 2em;
+}
+
+div.social a {
+    padding: .5em;
+}
+
+div.social img {
+    width: 1.2em;
 }
