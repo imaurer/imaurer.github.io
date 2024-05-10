@@ -1,10 +1,10 @@
-site_name: imaurer.com
+site_name: Ian Maurer's Notes
 site_author: Ian Maurer
 site_description: >-
   Website for Ian Maurer's notes on AI, Software Development, etc.
 repo_name: Ian Maurer's Notes
 repo_url: https://github.com/imaurer/blog/
-site_url: https://imaurer.com/
+site_url: https://www.imaurer.com/
 edit_uri: edit/main/docs/
 copyright: Copyright &copy; 2024 Ian Maurer
 theme:
