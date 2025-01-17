@@ -1,10 +1,8 @@
-ACTIVATE = . ./activate.sh
-
 sync:
-	uv pip install -r requirements-doc.txt
+	uv sync
 
 build:
-	$(ACTIVATE) && mkdocs build
+	uv run mkdocs build
 
 serve:
-	$(ACTIVATE) && mkdocs serve
+	uv run mkdocs serve

@@ -4,10 +4,10 @@ Personal website for Ian Maurer, CTO of <a href='https://genomoncology.com/'>Gen
 
 ## Articles
 
-- [What is a Custom GPT?](what-is-a-custom-gpt.md)
-- [Using grammars to constrain llama.cpp output](llama-cpp-grammars.md)
-- [LLMs just don't understand](llms-just-dont-understand-2.md)
-- [The Answer is the Easy Part](the-answer-is-the-easy-part.md)
+- [What is a Custom GPT?](what-is-a-custom-gpt.md) (Jan 8, 2024)
+- [Using grammars to constrain llama.cpp output](llama-cpp-grammars.md) (Sept 6, 2023)
+- [LLMs just don't understand](llms-just-dont-understand-2.md) (July 14, 2023)
+- [The Answer is the Easy Part](the-answer-is-the-easy-part.md) (May 18, 2023)
 
 
 ## Videos
