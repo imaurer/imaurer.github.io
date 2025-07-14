@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:imaurer.com)",
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run mkdocs:*)",
+      "Bash(rm:*)",
+      "Bash(python scripts/new_post.py:*)",
+      "Bash(uv run:*)",
+      "Bash(make:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

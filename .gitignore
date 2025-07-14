@@ -3,3 +3,6 @@
 .python-version
 .venv
 uv.lock
+
+# MkDocs build output
+site/

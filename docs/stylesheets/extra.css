@@ -1,0 +1,255 @@
+/* Custom styling for Ian Maurer's Notes */
+
+/* Root variables for consistent theming */
+:root {
+  --im-accent: #ff5722;
+  --im-accent-light: #ff7043;
+  --im-accent-dark: #d84315;
+  --im-text-muted: #666;
+  --im-border-light: #e0e0e0;
+  --im-bg-subtle: #f8f9fa;
+}
+
+/* Dark theme overrides */
+[data-md-color-scheme="slate"] {
+  --im-text-muted: #aaa;
+  --im-border-light: #3a3a3a;
+  --im-bg-subtle: #1e1e1e;
+}
+
+/* Typography enhancements */
+.md-typeset h1 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h2 {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--im-border-light);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.md-typeset h3 {
+  font-weight: 500;
+  color: var(--im-accent);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Blog post metadata styling */
+.md-typeset .md-meta {
+  color: var(--im-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--im-border-light);
+}
+
+.md-typeset .md-meta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.md-typeset .md-meta time {
+  font-weight: 500;
+}
+
+/* Author info styling */
+.md-typeset .md-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--im-bg-subtle);
+  border-radius: 8px;
+  border-left: 4px solid var(--im-accent);
+}
+
+.md-typeset .md-author__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.md-typeset .md-author__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.md-typeset .md-author__info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.md-typeset .md-author__info p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--im-text-muted);
+}
+
+/* Tag styling */
+.md-typeset .md-tags {
+  margin: 1rem 0;
+}
+
+.md-typeset .md-tag {
+  background: var(--im-accent);
+  color: white;
+  border-radius: 16px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  transition: background 0.2s ease;
+}
+
+.md-typeset .md-tag:hover {
+  background: var(--im-accent-dark);
+  color: white;
+}
+
+/* Code block enhancements */
+.md-typeset .highlight {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.md-typeset .highlight pre {
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Table enhancements */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--im-accent);
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--im-border-light);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+/* Admonition styling */
+.md-typeset .admonition {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+/* Blog list styling */
+.md-typeset .md-blog__meta {
+  color: var(--im-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset .md-blog__excerpt {
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 1rem;
+}
+
+.md-typeset .md-blog__more {
+  color: var(--im-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.md-typeset .md-blog__more:hover {
+  color: var(--im-accent-dark);
+  text-decoration: underline;
+}
+
+/* Navigation enhancements */
+.md-nav__title {
+  font-weight: 600;
+}
+
+.md-nav__link--active {
+  color: var(--im-accent) !important;
+  font-weight: 500;
+}
+
+/* Footer customization */
+.md-footer {
+  background: var(--md-default-bg-color);
+  border-top: 1px solid var(--im-border-light);
+}
+
+/* Social links styling */
+.md-social {
+  padding: 0;
+}
+
+.md-social__link {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 0 0.2rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.md-social__link:hover {
+  background: var(--im-accent);
+  transform: translateY(-2px);
+}
+
+/* Search result enhancements */
+.md-search-result__meta {
+  color: var(--im-text-muted);
+  font-size: 0.75rem;
+}
+
+.md-search-result__title {
+  font-weight: 500;
+}
+
+/* Responsive design improvements */
+@media screen and (max-width: 76.1875em) {
+  .md-typeset .md-author {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .md-typeset .md-meta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .md-typeset .md-author,
+  .md-typeset .md-meta,
+  .md-social {
+    display: none !important;
+  }
+}

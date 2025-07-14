@@ -1,9 +1,15 @@
-**July 14, 2023**
+---
+date: 2023-07-14
+categories: [AI, Philosophy]
+tags: [LLM, understanding, anthropomorphism, terminology]
+authors: [imaurer]
+---
+
 # LLMs Just Don't Understand
 
 I agree with Grady's [tweet](https://twitter.com/Grady_Booch/status/1679767930748432385):
 
-![yacine-grady.png](images%2Fyacine-grady.png)
+![yacine-grady.png](../../images/yacine-grady.png)
 
 But I also understand (at least I think, I think I do), that it's difficult to describe the subtleties of LLMs and their capabilities at language manipulation and automation without resorting to anthropomorphism at times.
 
@@ -34,3 +40,42 @@ Would you like to add or modify any entries in this table?
 I honestly don't like them because they are clunky and hard to remember.
 
 But I now have a blog article to point to when I see smart people arguing over definitions.
+
+## The Challenge of Describing AI
+
+The fundamental challenge we face when discussing AI capabilities is that our language evolved to describe human cognition and behavior. When we apply these same terms to artificial systems, we inevitably import assumptions about consciousness, intentionality, and understanding that may not apply.
+
+Consider the word "understanding." When we say a human understands something, we imply:
+
+- Conscious awareness of the concept
+- Ability to apply knowledge flexibly across contexts
+- Emotional or experiential connection to the meaning
+- Integration with a broader worldview and personal experience
+
+When an LLM produces contextually appropriate responses, it demonstrates something that *looks* like understanding from the outside, but the internal mechanisms are fundamentally different.
+
+## Why This Matters
+
+This isn't just semantic nitpicking. The language we use shapes how we think about AI capabilities and limitations. When we say an AI "understands" or "thinks," we risk:
+
+1. **Overestimating capabilities**: Assuming the AI has human-like comprehension when it's actually pattern matching
+2. **Underestimating limitations**: Missing edge cases where the pattern matching fails
+3. **Misaligned expectations**: Building systems based on false assumptions about AI behavior
+
+## A Practical Approach
+
+While my alternative terminology table above is admittedly clunky, it serves a purpose: making explicit what we actually mean when we describe AI capabilities.
+
+In practice, I find it useful to:
+
+- Be specific about what an AI system actually does (processes text, predicts tokens, etc.)
+- Distinguish between performance (what it produces) and process (how it works internally)
+- Acknowledge when using anthropomorphic language for convenience while being clear about the limitations
+
+## The Bigger Picture
+
+This linguistic challenge reflects a deeper philosophical question about the nature of intelligence, understanding, and consciousness. As AI systems become more sophisticated, these distinctions may become even more important.
+
+For now, I'll continue using terms like "understanding" when discussing AI, but with the caveat that I'm describing the external appearance of a capability, not claiming insight into the internal experience (if any) of the system.
+
+After all, I'm not even entirely sure what my own "understanding" really consists of.

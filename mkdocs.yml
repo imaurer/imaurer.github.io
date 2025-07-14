@@ -1,7 +1,7 @@
 site_name: Ian Maurer's Notes
 site_author: Ian Maurer
 site_description: >-
-  Website for Ian Maurer's notes on AI, Software Development, etc.
+  Personal insights on AI, genomics, and technology from Ian Maurer, CTO of GenomOncology
 repo_name: Ian Maurer's Notes
 repo_url: https://github.com/imaurer/blog/
 site_url: https://www.imaurer.com/
@@ -13,46 +13,18 @@ theme:
     repo: fontawesome/brands/github
     edit: material/pencil 
     view: material/eye
-    theme:
-    admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
   features:
-    - announce.dismiss
-    - content.action.edit
-    - content.action.view
-    - content.code.annotate
     - content.code.copy
     - content.code.select
-    - content.tabs.link
-    - content.tooltips
-    - header.autohide
-    - navigation.expand
-    - navigation.footer
-    - navigation.indexes
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.instant.progress
-    - navigation.prune
-    - navigation.sections
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
-    - toc.follow
+    - toc.integrate
   palette:
       - scheme: default 
         primary: black 
@@ -69,17 +41,51 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-# Extensions
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      post_date_format: medium
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
+      pagination_per_page: 10
+      pagination_url_format: "page/{page}"
+      authors_file: "{blog}/.authors.yml"
+  - tags
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags
+      comments_path: "#__comments"
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: "100%"
+      height: auto
+
 markdown_extensions:
   - abbr
   - admonition
-  - pymdownx.details
   - attr_list
   - def_list
   - footnotes
   - md_in_html
+  - tables
   - toc:
-      permalink: true
+      permalink: "¶"
+      title: "Table of Contents"
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
@@ -95,9 +101,6 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.snippets:
-      auto_append:
-        - includes/mkdocs.md
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -105,35 +108,15 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-      combine_header_slug: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - pymdownx.arithmatex:
-      generic: true
-nav:
-  - Home: 'index.md'
-  - Articles:
-    - What is a Custom GPT?: "what-is-a-custom-gpt.md"
-    - Using grammars to constrain llama.cpp output: "llama-cpp-grammars.md"
-    - LLMs Just Don't Understand: "llms-just-dont-understand-2.md"
-    - The Answer is the Easy Part: "the-answer-is-the-easy-part.md"
 
-plugins:
-  - search:
-      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  - minify:
-      minify_html: true
-  - mkdocstrings:
-      handlers:
-        python:
-          options:
-            members_order: alphabetical
-            allow_inspection: true
-            show_bases: true
+nav:
+  - Home: index.md
+  - Blog:
+    - blog/index.md
+  - About: about.md
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -142,4 +125,8 @@ extra:
       link: https://github.com/imaurer
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ianmaurer
+
+extra_css:
+  - stylesheets/extra.css
+
 copyright: Copyright &copy; 2024 Ian Maurer
