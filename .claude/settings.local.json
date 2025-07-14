@@ -12,7 +12,8 @@
       "Bash(make:*)",
       "Bash(git add:*)",
       "Bash(git restore:*)",
-      "Bash(git clean:*)"
+      "Bash(git clean:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
