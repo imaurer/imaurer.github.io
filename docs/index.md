@@ -32,9 +32,6 @@ The latest articles are available in the [Blog](blog/index.md) section, includin
 
 I maintain several projects focused on developer productivity and bioinformatics:
 
-- **[mito](https://github.com/imaurer/mito)** - Ultra-fast HGVS variant analysis (192x faster than Python)
-- **[biomcp](https://github.com/imaurer/biomcp)** - Biomedical MCP toolkit for AI assistants  
-- **[lzscan](https://github.com/imaurer/lzscan)** - High-performance text indexing with fuzzy matching
-- **[qparse](https://github.com/imaurer/qparse)** - Fast query parser for Rust and Python
+- **[biomcp](https://github.com/imaurer/biomcp)** - Biomedical MCP toolkit for AI assistants
 
 [Learn more about me →](about.md)

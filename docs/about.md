@@ -17,7 +17,7 @@ At GenomOncology, I lead the development of platforms that analyze genomic varia
 - AI tool integration and workflow automation
 
 **Genomics & Bioinformatics**
-- HGVS variant notation and analysis (working on [mito](https://github.com/imaurer/mito) - 192x faster than Python)
+- HGVS variant notation and analysis
 - Precision oncology data platforms
 - Clinical genomics workflows
 - Biomedical knowledge graphs
@@ -32,9 +32,6 @@ At GenomOncology, I lead the development of platforms that analyze genomic varia
 
 I maintain several open-source projects focused on developer productivity and bioinformatics:
 
-- **[mito](https://github.com/imaurer/mito)**: Ultra-fast HGVS variant analysis in Rust
-- **[lzscan](https://github.com/imaurer/lzscan)**: High-performance text indexing with fuzzy matching
-- **[qparse](https://github.com/imaurer/qparse)**: Fast query parser implementing HubSpot-style search DSL
 - **[biomcp](https://github.com/imaurer/biomcp)**: Biomedical MCP toolkit for AI assistants
 
 ## Speaking & Media
