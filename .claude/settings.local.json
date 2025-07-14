@@ -10,7 +10,9 @@
       "Bash(python scripts/new_post.py:*)",
       "Bash(uv run:*)",
       "Bash(make:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git restore:*)",
+      "Bash(git clean:*)"
     ],
     "deny": []
   }
