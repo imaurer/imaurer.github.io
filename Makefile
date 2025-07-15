@@ -2,9 +2,13 @@ sync:
 	uv sync
 
 build:
+	PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:$$PKG_CONFIG_PATH" \
+	DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:/opt/homebrew/opt/cairo/lib" \
 	uv run mkdocs build
 
 serve:
+	PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/libffi/lib/pkgconfig:$$PKG_CONFIG_PATH" \
+	DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:/opt/homebrew/opt/cairo/lib" \
 	uv run mkdocs serve
 
 deploy:

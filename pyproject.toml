@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Ian Maurer's Notes"
 requires-python = ">=3.12"
 dependencies = [
-    "mkdocs-material>=9.6",
+    "mkdocs-material[imaging]>=9.6",
     "mkdocs-minify-plugin",
     "mkdocs-rss-plugin",
     "mkdocs-git-revision-date-localized-plugin",

@@ -57,6 +57,10 @@ plugins:
         - categories
         - tags
       comments_path: "#__comments"
+  - social:
+      cards_layout_options:
+        background_color: "#000000"
+        color: "#FF5722"
   - git-revision-date-localized:
       enable_creation_date: true
       fallback_to_build_date: true
