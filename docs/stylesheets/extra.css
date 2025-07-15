@@ -277,8 +277,11 @@
   min-width: 48px !important;
   min-height: 48px !important;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain !important;
+  object-position: center center !important;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .md-post__profile {
@@ -288,10 +291,17 @@
 }
 
 .md-author.md-author--long {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 48px !important;
   height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
   flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f5f5f5;
 }
 
 /* Print styles */
