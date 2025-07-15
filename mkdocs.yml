@@ -40,9 +40,10 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - blog:
+      blog_dir: .
       blog_toc: true
       post_date_format: medium
-      post_url_format: "{slug}"
+      post_url_format: "blog/{slug}"
       pagination_per_page: 10
       pagination_url_format: "page/{page}"
       authors_file: "blog/.authors.yml"

@@ -304,19 +304,6 @@
   background: #f5f5f5;
 }
 
-/* Override "Back to index" text */
-.md-post__back .md-ellipsis::after {
-  content: "Back to Home";
-  visibility: visible;
-  position: absolute;
-  left: 0;
-}
-
-.md-post__back .md-ellipsis {
-  visibility: hidden;
-  position: relative;
-}
-
 /* Fix blog index page author avatars */
 .md-blog .md-author img {
   width: 32px !important;
