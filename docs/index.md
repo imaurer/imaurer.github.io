@@ -1,37 +1,36 @@
-# Welcome to Ian Maurer's Notes
+# Ian Maurer's Blog
 
-Personal insights on AI, genomics, and technology from Ian Maurer, CTO of [GenomOncology](https://genomoncology.com/).
+## 2025
 
-I write about the practical applications of emerging technologies, particularly at the intersection of artificial intelligence and genomics. My focus is on real-world implementations rather than theoretical concepts.
+### [I Call Them Loop Bots](blog/posts/2025-07-15-i-call-them-loop-bots.md)
+*July 15, 2025*
 
-## Recent Posts
+I love creating software with Claude Code. With the right Markdown plan, CC can reliably crank out work by finding, reading and editing files in a loop. Work done in 20-30 minutes that would have taken me at least half a day.
 
-The latest articles are available in the [Blog](blog/index.md) section, including:
+---
 
-- **AI & LLMs**: Practical applications, constrained generation, and tool integration
-- **Genomics**: HGVS variants, precision oncology, and bioinformatics tools  
-- **Technology**: Developer productivity, open source projects, and software architecture
+## 2024
 
-## Speaking & Media
+### [What is a Custom GPT?](blog/posts/2024-01-08-what-is-a-custom-gpt.md)
+*January 8, 2024*
 
-### Podcasts & Interviews
-- [Talk Python to Me #456](https://talkpython.fm/episodes/show/456/building-gpt-actions-with-fastapi-and-pydantic) - Building GPT Actions with FastAPI (Jan 2024)
-- [Focus on Talent Podcast](https://www.youtube.com/watch?v=48eQ6sYNU8s) - AI in Healthcare (Mar 2024)
-- [Talk Python to Me #154](https://talkpython.fm/episodes/show/154/python-in-biology-and-genomics) - Python in Biology and Genomics (Feb 2018)
+Custom GPTS are a configurable, shareable chat experience available to ChatGPT plus subscribers. Custom GPTs were announced on November 6th, 2023 at their inaugural Dev Day event and the GPT Store was announced on January 10th, 2024.
 
-### Technical Presentations
-- [Grounding Medical Q&A using ChatGPT plugins and Knowledge Graphs](https://www.youtube.com/watch?v=PwbQb9rvXbg) (Jun 2023)
-- [Clinco-Genomic Data Analysis using Metabase and GenomOncology](https://www.youtube.com/watch?v=wWIBdcwgQMQ&t=1205s) (Mar 2023)
-- [What is a VCF File](https://www.youtube.com/watch?v=VooqrSM_Rqk&t=26s) (Jan 2023)
+---
 
-### Conference Talks
-- [Ci4CC: Demystifying LLM Jargon](https://ci4cc-org.zoom.us/rec/play/Jg2ZkVO6xCP1NL9Ic8LBdbFnhh6BhbTZ__YxvCoKFLeYlAJg9djZOplSDIGE7CgOFb4jnecJzQEBthpF.pqLogM7ULysX5w0R?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https://ci4cc-org.zoom.us/rec/share/dd-3KkEKsbKK1nqnnQkqE680MvTC41tnYEzqKTXtRIu28qeQTdaZ28yKDJV-4782.FVH0iLowDaBVj7FG) (Feb 2024)
-- [Ci4CC: Generative AI Updates](https://ci4cc-org.zoom.us/rec/play/GH3MZRDyZ8A5okhRRxnEQnMhAkVIsV5xuei0CbfAszsLeHCwa7X9R1_iZyGoVqjUB9BLJ99MScF1tss.hdbrMUIgTX5vFWw3?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https://ci4cc-org.zoom.us/rec/share/DFZ31vHiBmSov-5mn5ka3PL4KXuNmzU3TJC7O0G0hWtWqBsH8YMTHhx25Qd-wOE7.2mOEdNK9oFt4kfdP) (Nov 2023)
+## 2023
 
-## Open Source Projects
+### [Using grammars to constrain llama.cpp output](blog/posts/2023-09-06-llama-cpp-grammars.md)
+*September 6, 2023*
 
-I maintain several projects focused on developer productivity and bioinformatics:
+Context-free grammars have increased the accuracy of my large language model-based biomedical data extraction pipeline. The llama.cpp project has recently added support for grammars to guide and constrain LLM output.
 
-- **[biomcp](https://github.com/imaurer/biomcp)** - Biomedical MCP toolkit for AI assistants
+### [LLMs Just Don't Understand](blog/posts/2023-07-14-llms-just-dont-understand.md)
+*July 14, 2023*
 
-[Learn more about me →](about.md)
+It's difficult to describe the subtleties of LLMs and their capabilities at language manipulation and automation without resorting to anthropomorphism at times. So, I decided to manipulate some tokens using my word calculator to come up with some alternative terms.
+
+### [The answer is the easy part](blog/posts/2023-05-18-the-answer-is-the-easy-part.md)
+*May 18, 2023*
+
+Med-PaLM 2 made news by scoring 86.5% on the MedQA dataset setting a new state-of-the-art. A great new tool for practitioners, but the truly difficult parts remain.

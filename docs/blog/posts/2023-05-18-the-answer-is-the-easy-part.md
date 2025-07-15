@@ -3,6 +3,7 @@ date: 2023-05-18
 categories: [AI, Healthcare]
 tags: [Med-PaLM, medical AI, USMLE, healthcare technology]
 authors: [imaurer]
+description: "Med-PaLM 2's impressive test scores highlight that getting answers is easier than addressing healthcare's real challenges."
 ---
 
 # The answer is the easy part

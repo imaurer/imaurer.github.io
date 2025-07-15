@@ -1,8 +1,9 @@
 ---
 date: 2023-07-14
-categories: [AI, Philosophy]
+categories: [AI]
 tags: [LLM, understanding, anthropomorphism, terminology]
 authors: [imaurer]
+description: "Exploring alternatives to anthropomorphic language when describing LLM capabilities."
 ---
 
 # LLMs Just Don't Understand

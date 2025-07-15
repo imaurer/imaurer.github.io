@@ -3,6 +3,7 @@ date: 2024-01-08
 categories: [AI, OpenAI]
 tags: [ChatGPT, GPT, Custom GPTs, AI Tools]
 authors: [imaurer]
+description: "Understanding OpenAI's Custom GPTs - configurable, shareable chat experiences for ChatGPT plus subscribers."
 ---
 
 # What is a Custom GPT?

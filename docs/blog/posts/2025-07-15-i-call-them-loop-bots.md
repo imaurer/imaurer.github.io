@@ -3,6 +3,7 @@ date: 2025-07-15
 categories: ['Blog']
 tags: []
 authors: ['imaurer']
+description: "Exploring a new class of AI tools that loop through reasoning and actions to complete complex tasks."
 ---
 # I Call Them Loop Bots
 

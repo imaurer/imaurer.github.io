@@ -3,6 +3,7 @@ date: 2023-09-06
 categories: [AI, LLM]
 tags: [llama.cpp, grammars, biomedical, data extraction, GBNF]
 authors: [imaurer]
+description: "How context-free grammars improve accuracy in LLM-based biomedical data extraction pipelines."
 ---
 
 # Using grammars to constrain llama.cpp output

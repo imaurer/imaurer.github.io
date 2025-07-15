@@ -2,17 +2,12 @@ site_name: Ian Maurer's Notes
 site_author: Ian Maurer
 site_description: >-
   Personal insights on AI, genomics, and technology from Ian Maurer, CTO of GenomOncology
-repo_name: Ian Maurer's Notes
-repo_url: https://github.com/imaurer/blog/
 site_url: https://www.imaurer.com/
-edit_uri: edit/main/docs/
 copyright: Copyright &copy; 2024 Ian Maurer
 theme:
   name: material
   icon:
-    repo: fontawesome/brands/github
-    edit: material/pencil 
-    view: material/eye
+    logo: material/library
   features:
     - content.code.copy
     - content.code.select
@@ -45,14 +40,12 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - blog:
-      blog_dir: blog
       blog_toc: true
       post_date_format: medium
-      post_url_date_format: yyyy/MM/dd
-      post_url_format: "{date}/{slug}"
+      post_url_format: "{slug}"
       pagination_per_page: 10
       pagination_url_format: "page/{page}"
-      authors_file: "{blog}/.authors.yml"
+      authors_file: "blog/.authors.yml"
   - tags
   - rss:
       match_path: blog/posts/.*
@@ -114,8 +107,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Blog:
-    - blog/index.md
   - About: about.md
 extra:
   social:
