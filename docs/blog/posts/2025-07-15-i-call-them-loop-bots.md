@@ -4,7 +4,7 @@ categories: ['Blog']
 tags: []
 authors: ['imaurer']
 ---
-# Loop Bots are the New New Thing
+# I Call Them Loop Bots
 
 I love creating software with [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview).
 
