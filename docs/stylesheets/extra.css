@@ -225,6 +225,11 @@
   transform: translateY(-2px);
 }
 
+/* Header social icons */
+.md-header__button.md-icon {
+  padding: 0 0.4rem;
+}
+
 /* Search result enhancements */
 .md-search-result__meta {
   color: var(--im-text-muted);

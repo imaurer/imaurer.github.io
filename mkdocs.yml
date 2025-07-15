@@ -6,6 +6,7 @@ site_url: https://www.imaurer.com/
 copyright: Copyright &copy; 2024 Ian Maurer
 theme:
   name: material
+  custom_dir: overrides
   icon:
     logo: material/library
   features:
