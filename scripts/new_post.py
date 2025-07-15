@@ -45,7 +45,7 @@ def extract_front_matter(content: str) -> tuple[dict, str]:
 
 def read_obsidian_post(post_path: str) -> Optional[tuple[dict, str]]:
     """Read a post from the Obsidian vault."""
-    obsidian_path = pathlib.Path("../jarvis_vault/9_Posts") / f"{post_path}.md"
+    obsidian_path = pathlib.Path("../jarvis_vault/blog") / f"{post_path}.md"
     
     if not obsidian_path.exists():
         print(f"Post not found: {obsidian_path}")
@@ -119,7 +119,7 @@ def create_blog_post(title: str, content: str = "", tags: list = None, categorie
 def main():
     parser = argparse.ArgumentParser(description='Create a new blog post')
     parser.add_argument('title', help='Post title')
-    parser.add_argument('--obsidian', '-o', help='Read content from Obsidian vault (9_Posts folder)')
+    parser.add_argument('--obsidian', '-o', help='Read content from Obsidian vault (blog folder)')
     parser.add_argument('--tags', '-t', nargs='*', help='Post tags')
     parser.add_argument('--categories', '-c', nargs='*', help='Post categories')
     parser.add_argument('--date', '-d', help='Post date (YYYY-MM-DD)')
