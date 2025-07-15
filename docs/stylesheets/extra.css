@@ -269,6 +269,31 @@
   display: block;
 }
 
+/* Fix for blog post author images */
+.md-post__authors .md-author img,
+.md-author--long img {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.md-post__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.md-author.md-author--long {
+  display: block;
+  width: 48px !important;
+  height: 48px !important;
+  flex-shrink: 0;
+}
+
 /* Print styles */
 @media print {
   .md-typeset .md-author,
