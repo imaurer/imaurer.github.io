@@ -46,6 +46,7 @@ plugins:
       pagination_per_page: 10
       pagination_url_format: "page/{page}"
       authors_file: "blog/.authors.yml"
+      archive: false
   - tags
   - rss:
       match_path: blog/posts/.*
