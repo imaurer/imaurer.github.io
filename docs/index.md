@@ -2,13 +2,6 @@
 
 ## 2025
 
-### [I Call Them Loop Bots](blog/posts/2025-07-15-i-call-them-loop-bots.md)
-*July 15, 2025*
-
-I love creating software with Claude Code. With the right Markdown plan, CC can reliably crank out work by finding, reading and editing files in a loop. Work done in 20-30 minutes that would have taken me at least half a day.
-
----
-
 ## 2024
 
 ### [What is a Custom GPT?](blog/posts/2024-01-08-what-is-a-custom-gpt.md)
