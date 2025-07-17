@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://www.imaurer.com/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://www.imaurer.com/about/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://www.imaurer.com/blog/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://www.imaurer.com/blog/posts/2023-05-18-the-answer-is-the-easy-part/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://www.imaurer.com/blog/posts/2023-07-14-llms-just-dont-understand/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://www.imaurer.com/blog/posts/2023-09-06-llama-cpp-grammars/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+    <url>
+         <loc>https://www.imaurer.com/blog/posts/2024-01-08-what-is-a-custom-gpt/</loc>
+         <lastmod>2025-07-17</lastmod>
+    </url>
+</urlset>
