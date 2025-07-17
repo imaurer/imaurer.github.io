@@ -35,7 +35,7 @@ make new TITLE="Your Post Title" TAGS="ai llm genomics" CATEGORIES="Technology"
 
 # Create from Obsidian content
 make obsidian POST=filename TITLE="Blog Title"
-# This reads from ../jarvis_vault/9_Posts/filename.md
+# This reads from ../jarvis_vault/blog/filename.md
 ```
 
 ### Post Creation Script
@@ -57,8 +57,8 @@ python scripts/new_post.py "Post Title" --obsidian post-name --tags ai llm --cat
 
 ```
 docs/
-├── index.md              # Homepage with overview and media links
-├── about.md              # About page showcasing Ian's expertise  
+├── index.md              # Homepage with blog post listings
+├── about.md              # About page with Ian's bio and media
 ├── blog/
 │   ├── posts/            # All blog posts in dated format
 │   │   ├── 2024-01-08-what-is-a-custom-gpt.md
@@ -85,7 +85,7 @@ docs/
 
 The blog integrates with Ian's Obsidian vault at `../jarvis_vault/`:
 
-- **Source**: Posts are written in `jarvis_vault/9_Posts/`
+- **Source**: Posts are written in `jarvis_vault/blog/` (previously 9_Posts)
 - **Conversion**: Obsidian markdown is converted to blog format
 - **Front matter**: YAML metadata is preserved and enhanced
 - **Links**: Obsidian-style `[[links]]` are converted to markdown
@@ -103,7 +103,7 @@ The blog integrates with Ian's Obsidian vault at `../jarvis_vault/`:
 
 ## Content Workflow
 
-1. **Write in Obsidian**: Create content in `jarvis_vault/9_Posts/`
+1. **Write in Obsidian**: Create content in `jarvis_vault/blog/`
 2. **Publish**: Use `make obsidian POST=filename TITLE="Blog Title"`
 3. **Review**: Check locally with `make serve`
 4. **Deploy**: Push to main branch or use `make deploy`
@@ -115,3 +115,31 @@ The blog automatically handles:
 - Social media card creation
 - Search indexing
 - Last updated timestamps
+
+## Important Implementation Notes
+
+### Navigation
+- Blog posts link back to the homepage (not a separate blog index)
+- Achieved by setting `blog_dir: .` in mkdocs.yml
+- Post URLs include blog/ prefix: `post_url_format: "blog/{slug}"`
+
+### Author Avatars
+- MkDocs Material uses different classes for author avatars in different contexts
+- Blog post pages use `.md-post__authors .md-author img`
+- Blog listing pages use `.md-blog .md-author img`
+- Avatar sizing must be forced with `!important` due to theme defaults
+- Use `object-fit: contain` to prevent image cropping
+
+### Git Integration
+- The `site/` directory should be in .gitignore
+- Build output is generated on deployment, not tracked in repo
+
+### Obsidian Vault Location
+- Posts moved from `jarvis_vault/9_Posts/` to `jarvis_vault/blog/`
+- Update `scripts/new_post.py` path when vault structure changes
+
+### URL Structure
+- Homepage (`/`) shows blog post listings
+- Individual posts at `/blog/<slug>`
+- No separate `/blog/` index page
+- About page at `/about`
