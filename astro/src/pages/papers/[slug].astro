@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('papers');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<Base title={entry.data.title} description={entry.data.description} ogType="article">
+  <h1>{entry.data.title}</h1>
+  <p class="meta-line">
+    {fmt(entry.data.date)}
+    {entry.data.venue && <span> · {entry.data.venue}</span>}
+    {entry.data.doi && (
+      <span> · <a href={`https://doi.org/${entry.data.doi}`}>doi:{entry.data.doi}</a></span>
+    )}
+  </p>
+  {entry.data.authors && <p class="meta-line">{entry.data.authors.join(', ')}</p>}
+  <Content />
+</Base>

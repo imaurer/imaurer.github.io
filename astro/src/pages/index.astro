@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import EntryList from '../components/EntryList.astro';
+
+const writing = await getCollection('writing');
+const talks = await getCollection('talks');
+const projects = await getCollection('projects');
+const papers = await getCollection('papers');
+
+const recent = [
+  ...writing.map((e) => ({ ...meta(e), kind: 'writing', href: `/writing/${e.id}/` })),
+  ...talks.map((e) => ({ ...meta(e), kind: 'talk', href: `/talks/${e.id}/` })),
+  ...projects.map((e) => ({ ...meta(e), kind: 'project', href: `/projects/${e.id}/` })),
+  ...papers.map((e) => ({ ...meta(e), kind: 'paper', href: `/papers/${e.id}/` })),
+].sort((a, b) => b.date.valueOf() - a.date.valueOf());
+
+function meta(e: { data: { title: string; date: Date; draft: boolean } }) {
+  return { title: e.data.title, date: e.data.date, draft: e.data.draft };
+}
+
+const pinned = [
+  {
+    href: '/talks/biomcp-st-jude/',
+    title: 'BioMCP: Biomedical Model Context Protocol',
+    note: 'St. Jude talk on LLMs, tools, and biomedical agents',
+  },
+  {
+    href: '/projects/biomcp/',
+    title: 'BioMCP',
+    note: 'Open-source biomedical tool layer for AI assistants and agents',
+  },
+  {
+    href: '/writing/why-biomcp-exists/',
+    title: 'Why BioMCP exists',
+    note: 'Grounded models beat memory alone',
+  },
+];
+---
+
+<Base
+  title="Ian Maurer"
+  description="CTO of GenomOncology. I write about AI agents doing real biomedical work."
+>
+  <p class="intro">
+    CTO of GenomOncology. I write about AI agents doing real biomedical work.
+  </p>
+
+  <h2 class="section-label">Pinned</h2>
+  <ul class="entry-list">
+    {
+      pinned.map((p) => (
+        <li>
+          <span>
+            <a href={p.href}>{p.title}</a>
+            <br />
+            <small style="color: var(--text-faint)">{p.note}</small>
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2 class="section-label">Now</h2>
+  <p>
+    Building an agent-driven software factory, growing BioMCP, and figuring out
+    what validated biomedical agents look like behind a hospital firewall.
+  </p>
+
+  <h2 class="section-label">Recent</h2>
+  <EntryList items={recent} showKind={true} />
+</Base>

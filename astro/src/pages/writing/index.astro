@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EntryList from '../../components/EntryList.astro';
+
+const posts = (await getCollection('writing')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const items = posts.map((p) => ({
+  href: `/writing/${p.id}/`,
+  title: p.data.title,
+  date: p.data.date,
+  draft: p.data.draft,
+}));
+---
+
+<Base title="Writing" description="Essays and notes by Ian Maurer on AI agents, bioinformatics, and building software.">
+  <h1>Writing</h1>
+  <EntryList items={items} />
+</Base>

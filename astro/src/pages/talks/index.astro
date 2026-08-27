@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const talks = (await getCollection('talks')).sort(
+  (a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf()
+);
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<Base title="Talks" description="Talks by Ian Maurer on AI agents, MCP, and biomedical software.">
+  <h1>Talks</h1>
+  <ul class="entry-list">
+    {
+      talks.map((t) => (
+        <li>
+          <span class="date">{fmt(t.data.eventDate)}</span>
+          <span>
+            <a href={`/talks/${t.id}/`}>{t.data.title}</a>
+            <br />
+            <small style="color: var(--text-faint)">{t.data.event}</small>
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

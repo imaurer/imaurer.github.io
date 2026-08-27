@@ -1,0 +1,116 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogType?: string;
+}
+
+const { title, description, ogType = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title === 'Ian Maurer' ? title : `${title} · Ian Maurer`;
+const path = Astro.url.pathname;
+const navItems = [
+  { href: '/writing/', label: 'Writing' },
+  { href: '/talks/', label: 'Talks' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/papers/', label: 'Papers' },
+  { href: '/about/', label: 'About' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Ian Maurer"
+      href={new URL('rss.xml', Astro.site)}
+    />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Ian Maurer" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <script is:inline>
+      (function () {
+        var theme = 'dark';
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'light' || stored === 'dark') theme = stored;
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="wordmark" href="/">Ian Maurer</a>
+        <nav class="site-nav">
+          {
+            navItems.map((item) => (
+              <a
+                href={item.href}
+                aria-current={path.startsWith(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle color theme">theme</button
+          >
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="links">
+          <a href="https://github.com/imaurer">GitHub</a>
+          <a href="#" title="Coming soon">Substack</a>
+          <a href="#" title="Coming soon">LinkedIn</a>
+          <a href="#" title="Coming soon">X</a>
+          <a href="/rss.xml">RSS</a>
+        </div>
+        <p>Opinions mine — not medical advice, not my employer's positions.</p>
+        <p>
+          Text licensed
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+        </p>
+      </div>
+    </footer>
+    <script is:inline>
+      document
+        .getElementById('theme-toggle')
+        .addEventListener('click', function () {
+          var next =
+            document.documentElement.dataset.theme === 'dark'
+              ? 'light'
+              : 'dark';
+          document.documentElement.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EntryList from '../../components/EntryList.astro';
+
+const papers = (await getCollection('papers')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const items = papers.map((p) => ({
+  href: `/papers/${p.id}/`,
+  title: p.data.title,
+  date: p.data.date,
+  draft: p.data.draft,
+}));
+---
+
+<Base title="Papers" description="Papers and preprints by Ian Maurer.">
+  <h1>Papers</h1>
+  {items.length === 0 ? <p>Nothing here yet.</p> : <EntryList items={items} />}
+</Base>

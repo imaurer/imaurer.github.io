@@ -1,0 +1,31 @@
+---
+interface Item {
+  href: string;
+  title: string;
+  date: Date;
+  draft?: boolean;
+  kind?: string;
+}
+interface Props {
+  items: Item[];
+  showKind?: boolean;
+}
+const { items, showKind = false } = Astro.props;
+const fmt = (d: Date) =>
+  d.toISOString().slice(0, 10);
+---
+
+<ul class="entry-list">
+  {
+    items.map((item) => (
+      <li>
+        <span class="date">{fmt(item.date)}</span>
+        {showKind && <span class="kind">{item.kind}</span>}
+        <span>
+          <a href={item.href}>{item.title}</a>
+          {item.draft && <span class="draft-badge">draft</span>}
+        </span>
+      </li>
+    ))
+  }
+</ul>
