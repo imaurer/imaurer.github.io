@@ -37,6 +37,7 @@
   --text-muted: #d8dee9;
   --text-faint: #a3aed0;
   --accent: #88c0d0;
+  --accent-bright: #a8dbe8;
   --accent-2: #81a1c1;
   --accent-3: #5e81ac;
   --aurora-red: #bf616a;
@@ -61,6 +62,7 @@
   --text-muted: #3b4252;
   --text-faint: #6b7089;
   --accent: #5e81ac;
+  --accent-bright: #4c6a92;
   --accent-2: #81a1c1;
   --accent-3: #5e81ac;
   --border: #d8dee9;
@@ -96,12 +98,14 @@ body {
 
 a {
   color: var(--accent);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 3px;
 }
 a:hover {
-  color: var(--aurora-green);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: var(--accent-bright);
+  text-decoration-color: currentColor;
 }
 
 h1, h2, h3, h4 {
@@ -175,6 +179,7 @@ blockquote {
   font-size: 1.05rem;
   color: var(--text);
   letter-spacing: 0.01em;
+  text-decoration: none;
 }
 .wordmark:hover {
   color: var(--accent);
@@ -189,6 +194,7 @@ blockquote {
 }
 .site-nav a {
   color: var(--text-muted);
+  text-decoration: none;
 }
 .site-nav a:hover,
 .site-nav a[aria-current='page'] {
@@ -224,9 +230,24 @@ main {
 .site-footer .links {
   font-family: var(--font-mono);
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.1rem;
   flex-wrap: wrap;
   margin-bottom: 0.75rem;
+}
+.site-footer .links a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.site-footer .links a:hover {
+  color: var(--accent);
+}
+.site-footer .links svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
 }
 .site-footer a {
   color: var(--text-muted);
@@ -366,6 +387,15 @@ main {
   border-radius: 4px;
   padding: 0.6rem 0.9rem;
   background: var(--bg-raised);
+}
+
+/* Back-to-index link at the bottom of content pages */
+.more-link {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
 }
 
 table {
