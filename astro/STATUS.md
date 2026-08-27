@@ -28,6 +28,23 @@ Branch: `astro-redesign`. The Astro site lives in `astro/` and coexists with the
 - Cross-links: talk pages add a "Watch on YouTube" link under the embed; project pages add a prominent "View on GitHub" button; paper pages surface DOI and PMID in the meta line (new optional `pmid` schema field); every content page ends with a "More <section> →" link back to its index.
 - The avatar also sits at `public/images/avatar.png` for general use.
 
+## Ported posts (2026-08-27)
+
+Two posts from the old MkDocs blog now live in the writing collection with their original prose and publication dates. Cutover needs redirects from the old URLs:
+
+| Old URL | New URL |
+| --- | --- |
+| /blog/posts/2023-09-06-llama-cpp-grammars/ | /writing/llama-cpp-grammars/ |
+| /blog/posts/2024-01-08-what-is-a-custom-gpt/ | /writing/what-is-a-custom-gpt/ |
+
+The Custom GPT post's image moved from docs/images/ to public/images/what-is-a-custom-gpt.png. The other two old posts (2023-05-18, 2023-07-14) were not ported.
+
+## Elsewhere — external posts (2026-08-27)
+
+The writing schema gained optional `external` (URL) and `site` (display label) fields. An external entry is a stub .md file. Its frontmatter carries the link and its body is a 1-3 sentence blurb shown in the writing index. The list item links straight to the external URL. External entries have no local detail page, no OG image, and are excluded from RSS. The writing index and homepage recent list mark them with a monospace "→ domain" badge in the muted accent color. The writing index carries a one-line note about them.
+
+Entries added (all URLs verified 200 on 2026-08-27): "What is a Variant Call Format (VCF) File?" on genomoncology.com, and eight biomcp.org blog articles. The ninth biomcp.org post (biomcp-kuva-charts) is a legacy compatibility stub and was skipped. Dates for biomcp.org entries come from each article's first commit in the local biomcp repo. The what-is-a-vcf-file stub carries a commented example of the pattern for future botassembly.org entries.
+
 ## Preview
 
 ```bash
