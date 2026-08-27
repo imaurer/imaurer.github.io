@@ -24,6 +24,7 @@ const collections = [
 
 for (const [name, label] of collections) {
   for (const entry of await getCollection(name)) {
+    if ('external' in entry.data && entry.data.external) continue;
     pages[`${name}/${entry.id}`] = {
       title: entry.data.title,
       label: `${label} · imaurer.com`,

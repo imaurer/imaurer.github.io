@@ -15,7 +15,11 @@ const base = {
 
 const writing = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/writing' }),
-  schema: z.object(base),
+  schema: z.object({
+    ...base,
+    external: z.string().url().optional(),
+    site: z.string().optional(),
+  }),
 });
 
 const talks = defineCollection({

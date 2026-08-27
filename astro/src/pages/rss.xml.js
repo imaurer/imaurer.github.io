@@ -6,7 +6,10 @@ export async function GET(context) {
   const container = await AstroContainer.create();
 
   const collect = async (name, prefix) => {
-    const entries = await getCollection(name, ({ data }) => !data.draft);
+    const entries = await getCollection(
+      name,
+      ({ data }) => !data.draft && !data.external
+    );
     return Promise.all(
       entries.map(async (entry) => {
         const { Content } = await render(entry);

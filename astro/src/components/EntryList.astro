@@ -5,6 +5,8 @@ interface Item {
   date: Date;
   draft?: boolean;
   kind?: string;
+  site?: string;
+  blurb?: string;
 }
 interface Props {
   items: Item[];
@@ -23,7 +25,14 @@ const fmt = (d: Date) =>
         {showKind && <span class="kind">{item.kind}</span>}
         <span>
           <a href={item.href}>{item.title}</a>
+          {item.site && <span class="site-badge">→ {item.site}</span>}
           {item.draft && <span class="draft-badge">draft</span>}
+          {item.blurb && (
+            <>
+              <br />
+              <small class="blurb">{item.blurb}</small>
+            </>
+          )}
         </span>
       </li>
     ))

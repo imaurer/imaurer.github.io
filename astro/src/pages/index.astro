@@ -9,7 +9,14 @@ const projects = await getCollection('projects');
 const papers = await getCollection('papers');
 
 const recent = [
-  ...writing.map((e) => ({ ...meta(e), kind: 'writing', href: `/writing/${e.id}/` })),
+  ...writing.map((e) => ({
+    ...meta(e),
+    kind: 'writing',
+    href: e.data.external ?? `/writing/${e.id}/`,
+    site: e.data.external
+      ? (e.data.site ?? new URL(e.data.external).hostname.replace(/^www\./, ''))
+      : undefined,
+  })),
   ...talks.map((e) => ({ ...meta(e), kind: 'talk', href: `/talks/${e.id}/` })),
   ...projects.map((e) => ({ ...meta(e), kind: 'project', href: `/projects/${e.id}/` })),
   ...papers.map((e) => ({ ...meta(e), kind: 'paper', href: `/papers/${e.id}/` })),

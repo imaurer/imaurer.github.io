@@ -304,6 +304,23 @@ main {
   margin-right: 0.35rem;
 }
 
+.site-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  white-space: nowrap;
+  margin-left: 0.35rem;
+}
+.entry-list .blurb {
+  color: var(--text-faint);
+}
+.elsewhere-note {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  margin: -0.5rem 0 1.5rem;
+}
+
 .draft-badge {
   font-family: var(--font-mono);
   font-size: 0.75rem;
