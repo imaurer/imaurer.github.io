@@ -36,7 +36,7 @@ chapters:
   - { time: "39:51", label: "Custom GPTs and Actions" }
   - { time: "48:33", label: "The PyPI GPT Project" }
   - { time: "55:12", label: "GPTs for Precision Oncology" }
-  - { time: "61:09", label: "Library Recommendations and Wrap Up" }
+  - { time: "1:01:09", label: "Library Recommendations and Wrap Up" }
 ---
 
 ### Episode Introduction
