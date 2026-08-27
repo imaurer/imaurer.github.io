@@ -50,6 +50,7 @@ const papers = defineCollection({
     authors: z.array(z.string()).optional(),
     venue: z.string().optional(),
     doi: z.string().optional(),
+    pmid: z.string().optional(),
   }),
 });
 

@@ -5,6 +5,7 @@ date: 2023-09-01
 category: agents
 venue: "JCO Clinical Cancer Informatics"
 doi: "10.1200/cci.23.00136"
+pmid: "38055914"
 authors: ["Danielle S. Bitterman", "Michael F. Gensheimer", "and the CI4CC working group (27 authors, incl. Ian Maurer)"]
 tags: [clinical-ai, informatics, ci4cc]
 ---

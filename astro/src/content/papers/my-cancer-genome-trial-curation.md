@@ -5,6 +5,7 @@ date: 2020-07-01
 category: bioinformatics
 venue: "Journal of the American Medical Informatics Association (JAMIA)"
 doi: "10.1093/jamia/ocaa066"
+pmid: "32483629"
 authors: ["Neha Jain", "Kathleen F. Mittendorf", "Marilyn Holt", "Michele Lenoue-Newton", "Ian Maurer", "Cindy Miller", "Matthew Stachowiak", "Megan Botyrius", "James Cole", "Christine Micheel", "Mia Levy"]
 tags: [clinical-trials, precision-oncology, knowledge-base]
 ---

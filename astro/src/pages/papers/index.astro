@@ -14,7 +14,7 @@ const items = papers.map((p) => ({
 }));
 ---
 
-<Base title="Papers" description="Papers and preprints by Ian Maurer.">
+<Base ogImage="/og/papers.png" title="Papers" description="Papers and preprints by Ian Maurer.">
   <h1>Papers</h1>
   {items.length === 0 ? <p>Nothing here yet.</p> : <EntryList items={items} />}
 </Base>

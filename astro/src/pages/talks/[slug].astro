@@ -24,7 +24,12 @@ const slugify = (label: string) =>
     .replace(/\s+/g, '-');
 ---
 
-<Base title={talk.data.title} description={talk.data.description} ogType="article">
+<Base
+  title={talk.data.title}
+  description={talk.data.description}
+  ogType="article"
+  ogImage={`/og/talks/${talk.id}.png`}
+>
   <h1>{talk.data.title}</h1>
   <p class="meta-line">
     {talk.data.event} · {fmt(talk.data.eventDate)} · {talk.data.category}
@@ -62,6 +67,11 @@ const slugify = (label: string) =>
             allowfullscreen
           />
         </div>
+        <p class="listen-link">
+          <a href={`https://www.youtube.com/watch?v=${talk.data.youtubeId}`}>
+            Watch on YouTube →
+          </a>
+        </p>
       </>
     ) : talk.data.episodeUrl ? (
       <p class="listen-link">
@@ -106,4 +116,5 @@ const slugify = (label: string) =>
 
   <h2>Transcript</h2>
   <Content />
+  <p class="more-link"><a href="/talks/">More talks →</a></p>
 </Base>

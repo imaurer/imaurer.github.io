@@ -12,7 +12,12 @@ const { Content } = await render(entry);
 const fmt = (d: Date) => d.toISOString().slice(0, 10);
 ---
 
-<Base title={entry.data.title} description={entry.data.description} ogType="article">
+<Base
+  title={entry.data.title}
+  description={entry.data.description}
+  ogType="article"
+  ogImage={`/og/papers/${entry.id}.png`}
+>
   <h1>{entry.data.title}</h1>
   <p class="meta-line">
     {fmt(entry.data.date)}
@@ -20,7 +25,11 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     {entry.data.doi && (
       <span> · <a href={`https://doi.org/${entry.data.doi}`}>doi:{entry.data.doi}</a></span>
     )}
+    {entry.data.pmid && (
+      <span> · <a href={`https://pubmed.ncbi.nlm.nih.gov/${entry.data.pmid}/`}>PMID {entry.data.pmid}</a></span>
+    )}
   </p>
   {entry.data.authors && <p class="meta-line">{entry.data.authors.join(', ')}</p>}
   <Content />
+  <p class="more-link"><a href="/papers/">More papers →</a></p>
 </Base>

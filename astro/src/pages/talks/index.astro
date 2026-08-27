@@ -8,7 +8,7 @@ const talks = (await getCollection('talks')).sort(
 const fmt = (d: Date) => d.toISOString().slice(0, 10);
 ---
 
-<Base title="Talks" description="Talks by Ian Maurer on AI agents, MCP, and biomedical software.">
+<Base ogImage="/og/talks.png" title="Talks" description="Talks by Ian Maurer on AI agents, MCP, and biomedical software.">
   <h1>Talks</h1>
   <ul class="entry-list">
     {

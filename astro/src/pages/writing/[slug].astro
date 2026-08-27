@@ -12,7 +12,12 @@ const { Content } = await render(post);
 const fmt = (d: Date) => d.toISOString().slice(0, 10);
 ---
 
-<Base title={post.data.title} description={post.data.description} ogType="article">
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+  ogImage={`/og/writing/${post.id}.png`}
+>
   <h1>{post.data.title}</h1>
   <p class="meta-line">
     {fmt(post.data.date)}
@@ -30,4 +35,5 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     )
   }
   <Content />
+  <p class="more-link"><a href="/writing/">More writing →</a></p>
 </Base>

@@ -5,6 +5,7 @@ date: 2017-08-01
 category: bioinformatics
 venue: "Cancer Discovery"
 doi: "10.1158/2159-8290.CD-17-0151"
+pmid: "28572459"
 authors: ["AACR Project GENIE Consortium"]
 tags: [genomics, precision-oncology, data-sharing]
 ---
