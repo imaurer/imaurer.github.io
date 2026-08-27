@@ -16,8 +16,17 @@ Branch: `astro-redesign`. The Astro site lives in `astro/` and coexists with the
 - Talks: five more entries, each with summary, takeaways, and full transcript with chapter anchors — Talk Python #154 (2018-03-07, episode link), Talk Python #456 (2024-04-16, YouTube embed + episode link), CI4CC ChatGPT-plugins talk (2023-06-19, YouTube embed, captions pulled 2026-08-27), Lay of the Land #172 (2024-06-27, YouTube embed + episode link), Dev in the Details #11 (2026-05-06, YouTube embed, no timestamps so no chapters).
 - Talks schema gained optional `episodeUrl`; the talk page renders a "Listen on <site>" link when there is no youtubeId and an episode-page link under the embed when there are both. Summary frontmatter now renders as multiple paragraphs split on blank lines.
 - Writing: "Why BioMCP exists" (draft) with a Shiki-highlighted `biomcp` CLI code block.
-- Projects: BioMCP, FuzzTypes, botassembly (marked "not yet public").
-- About page with role, thesis, and placeholder slots for photo, ORCID, and Scholar links.
+- Projects: BioMCP (lead) and PangoPup. FuzzTypes and botassembly were removed on owner feedback (2026-08-27).
+- About page with role, thesis, placeholder slots for photo, ORCID, and Scholar links, plus links to the Writing, Talks, Projects, and Papers indexes.
+
+## Design polish (2026-08-27)
+
+- In-content links now show a subtle underline (accent color, 3px offset) and brighten on hover via a per-theme `--accent-bright` token. Nav, wordmark, and footer links stay quieter with no underline.
+- Footer social links are inline single-color SVG icons (currentColor, aria-label + title): GitHub, X, LinkedIn, RSS. A YouTube icon sits commented out until the channel exists. The commented Substack placeholder came out of the footer; the About page still carries it.
+- Open Graph card images generate per page at build time with astro-og-canvas: Nord dark gradient background, frost bottom border, the page title in Ioskeley Mono Bold, a "<Type> · imaurer.com" label, and Ian's GitHub avatar. The route is `src/pages/og/[...route].ts`; TTF copies of Ioskeley Mono live in `src/assets/fonts/` because CanvasKit cannot read woff2. `twitter:card` is `summary_large_image` and `og:image` is absolute.
+- `site` in astro.config is now `https://www.imaurer.com` to match the root CNAME.
+- Cross-links: talk pages add a "Watch on YouTube" link under the embed; project pages add a prominent "View on GitHub" button; paper pages surface DOI and PMID in the meta line (new optional `pmid` schema field); every content page ends with a "More <section> →" link back to its index.
+- The avatar also sits at `public/images/avatar.png` for general use.
 
 ## Preview
 
@@ -36,7 +45,6 @@ cd astro && npm install && npm run dev
 
 - Draft policy: hide drafts in production builds, or keep the badge behavior?
 - Chapter timestamps refer to the original recording; rebase them against the YouTube cut when the video posts (the talk page carries a note).
-- The papers collection is empty; the build logs a harmless "collection is empty" warning until the first entry lands.
 - Light mode keeps code blocks dark (Shiki ships Nord's dark colors). Alternative: dual-theme Shiki with nord-light-ish theme if a light code block is wanted.
 - Category pages (/writing/category/agents/ etc.) are not built yet — categories render as labels only.
 - Footer and About link to real GitHub, X, and LinkedIn profiles. Substack stays a commented-out placeholder until the account exists.
