@@ -23,6 +23,7 @@ const talks = defineCollection({
   schema: z.object({
     ...base,
     youtubeId: z.string().optional(),
+    episodeUrl: z.string().url().optional(),
     event: z.string(),
     eventDate: z.coerce.date(),
     chapters: z

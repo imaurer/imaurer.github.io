@@ -30,7 +30,13 @@ const slugify = (label: string) =>
     {talk.data.event} · {fmt(talk.data.eventDate)} · {talk.data.category}
   </p>
 
-  {talk.data.summary && <p>{talk.data.summary}</p>}
+  {
+    talk.data.summary &&
+      talk.data.summary
+        .trim()
+        .split(/\n\s*\n/)
+        .map((para) => <p>{para}</p>)
+  }
 
   {
     talk.data.takeaways && (
@@ -45,20 +51,42 @@ const slugify = (label: string) =>
     )
   }
 
-  <h2>Video</h2>
-  <div class="video-slot">
-    {
-      talk.data.youtubeId ? (
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${talk.data.youtubeId}`}
-          title={talk.data.title}
-          allowfullscreen
-        />
-      ) : (
-        <span>video coming soon</span>
-      )
-    }
-  </div>
+  {
+    talk.data.youtubeId ? (
+      <>
+        <h2>Video</h2>
+        <div class="video-slot">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${talk.data.youtubeId}`}
+            title={talk.data.title}
+            allowfullscreen
+          />
+        </div>
+      </>
+    ) : talk.data.episodeUrl ? (
+      <p class="listen-link">
+        <a href={talk.data.episodeUrl}>
+          Listen on {new URL(talk.data.episodeUrl).hostname.replace(/^www\./, '')} →
+        </a>
+      </p>
+    ) : (
+      <>
+        <h2>Video</h2>
+        <div class="video-slot">
+          <span>video coming soon</span>
+        </div>
+      </>
+    )
+  }
+  {
+    talk.data.youtubeId && talk.data.episodeUrl && (
+      <p class="listen-link">
+        <a href={talk.data.episodeUrl}>
+          Episode page on {new URL(talk.data.episodeUrl).hostname.replace(/^www\./, '')} →
+        </a>
+      </p>
+    )
+  }
 
   {
     talk.data.chapters && (
