@@ -1,0 +1,29 @@
+# Ian Maurer
+
+> Ian Maurer is CTO of GenomOncology. He writes about AI agents doing real biomedical work: precision oncology, curated knowledge graphs, and the tools that ground language models. This site collects his writing, talks, papers, and projects. Every page below has a raw Markdown twin at the listed URL, and https://www.imaurer.com/llms-full.txt concatenates all of them in one fetch.
+
+## Writing
+
+- [Using grammars to constrain llama.cpp output](https://www.imaurer.com/writing/llama-cpp-grammars.md): grammars cut malformed JSON to zero in a biomedical extraction pipeline
+- [What is a Custom GPT?](https://www.imaurer.com/writing/what-is-a-custom-gpt.md): the parts, history, benefits, and risks of OpenAI's Custom GPTs
+
+## Talks
+
+- [Most AI Agents Are Toys. These Ones Treat Cancer](https://www.imaurer.com/talks/dev-in-the-details-11.md): Dev in the Details interview on agents for cancer care and BioMCP
+- [BioMCP: Biomedical Model Context Protocol](https://www.imaurer.com/talks/biomcp-st-jude.md): St. Jude talk on grounding language models with trusted biomedical tools
+- [Precision Oncology, Convergence of Genomics and AI, and Improving Cancer Care](https://www.imaurer.com/talks/lay-of-the-land-172.md): Lay of the Land interview on the GenomOncology story
+- [Building GPT Actions with FastAPI and Pydantic](https://www.imaurer.com/talks/talk-python-456.md): Talk Python episode on custom GPTs and OpenAPI-driven actions
+- [Grounding Medical Q&A using ChatGPT Plugins and Knowledge Graphs](https://www.imaurer.com/talks/ci4cc-chatgpt-plugins.md): CI4CC talk on grounding medical answers with a curated knowledge graph
+- [Python in Biology and Genomics](https://www.imaurer.com/talks/talk-python-154.md): Talk Python episode on the Python stack behind cancer genomics
+
+## Papers
+
+- [Cancer Informatics for Cancer Centers: Sharing Ideas on How to Build an AI-Ready Informatics Ecosystem for Radiation Oncology](https://www.imaurer.com/papers/ci4cc-ai-ready-informatics.md): what cancer centers need before AI can help in the clinic
+- [The My Cancer Genome clinical trial data model and trial curation workflow](https://www.imaurer.com/papers/my-cancer-genome-trial-curation.md): structuring cancer trials so software can match patients to them
+- [AACR Project GENIE: Powering Precision Medicine through an International Consortium](https://www.imaurer.com/papers/aacr-project-genie.md): the shared registry of real-world cancer genomic and clinical data
+
+## Projects
+
+- [Precision Oncology Platform (POP)](https://www.imaurer.com/projects/precision-oncology-platform.md): GenomOncology's knowledge-graph matching engine for clinical decision support
+- [BioMCP](https://www.imaurer.com/projects/biomcp.md): open-source biomedical tool layer for AI assistants and agents
+- [PangoPup](https://www.imaurer.com/projects/pangopup.md): open-source Rust service for local Pangolin splice predictions

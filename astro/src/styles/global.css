@@ -227,6 +227,16 @@ main {
   font-size: 0.85rem;
   color: var(--text-faint);
 }
+.site-footer .llms-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  text-decoration: none;
+  align-self: center;
+}
+.site-footer .llms-link:hover {
+  color: var(--accent);
+}
 .site-footer .links {
   font-family: var(--font-mono);
   display: flex;
@@ -379,6 +389,35 @@ main {
   height: 100%;
   border: 0;
   border-radius: 4px;
+}
+.md-actions {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin: 0.75rem 0 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.md-actions .copy-md {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.15rem 0.5rem;
+  cursor: pointer;
+}
+.md-actions .copy-md:hover {
+  color: var(--accent);
+  border-color: var(--accent-3);
+}
+.md-actions a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.md-actions a:hover {
+  color: var(--accent);
 }
 .chapters {
   list-style: none;
