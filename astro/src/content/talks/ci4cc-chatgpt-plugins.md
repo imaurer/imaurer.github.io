@@ -37,11 +37,11 @@ chapters:
   - { time: "33:52", label: "Next steps and collaboration" }
 ---
 
-> This transcript comes from YouTube auto-captions, lightly grouped into paragraphs; expect missing punctuation and mis-heard words.
+> This transcript comes from YouTube auto-captions, lightly grouped into paragraphs; proper nouns corrected, otherwise expect missing punctuation and mis-heard words.
 
 ### Introduction and GenomOncology
 
-**[00:00]** thank you I'm going to be talking today about grounding medical q a using chair gbt plugins and knowledge graphs before I get started a little bit about myself I'm Ian Moore I'm the chief technology officer for genome oncology genome oncology was founded in 2012 in Cleveland Ohio we serve over 40 clients including 17 NTI designated cancer centers our software is installed on premise or in private Cloud installations we're HIPAA compliant we don't take data rights meaning we don't package and resell patient data and when
+**[00:00]** thank you I'm going to be talking today about grounding medical q a using chair gbt plugins and knowledge graphs before I get started a little bit about myself I'm Ian Maurer I'm the chief technology officer for GenomOncology GenomOncology was founded in 2012 in Cleveland Ohio we serve over 40 clients including 17 NTI designated cancer centers our software is installed on premise or in private Cloud installations we're HIPAA compliant we don't take data rights meaning we don't package and resell patient data and when
 
 **[00:31]** vendor agnostic meaning we work with a variety of devices and partners to help our clients with their clinical genomic data and using that data to match patients to clinical trials and Therapies of which is really the major challenge that our software solves right the number of biomarker-based clinical trials and FDA approvals and nccm guidelines and European guidelines are growing at a very fast rate uh software and knowledge base solves this problem for our clients by
 
@@ -131,7 +131,7 @@ chapters:
 
 ### Demo of the knowledge graph plugin
 
-**[18:25]** so now I'm going to do a demo of precision oncology the our knowledge graph and Knowledge Graph plugin uh let's see so so first a little bit about genome oncology and our knowledge graph so we have our set of ontologies right so things like genes from hgnc transcripts from the universal transcript archive diseases Etc these are all the building blocks or concepts that are related to each other right so diseases for instance is a very complicated ontology because you know
+**[18:25]** so now I'm going to do a demo of precision oncology the our knowledge graph and Knowledge Graph plugin uh let's see so so first a little bit about GenomOncology and our knowledge graph so we have our set of ontologies right so things like genes from hgnc transcripts from the universal transcript archive diseases Etc these are all the building blocks or concepts that are related to each other right so diseases for instance is a very complicated ontology because you know
 
 **[18:55]** there's parents and children and there's you know disease sight and disease histology and those and those ontologies are then used along with varying interpretations and and it's very variant annotations to then create what are called assertions so we have clinical trials and I have things like prior interventions there's complex eligibility criteria for these clinical trials our team is hand coding the eligibility criteria by both biomarkers and diseases to then basically curate what who's eligible or ineligible for a
 
@@ -153,7 +153,7 @@ chapters:
 
 **[23:55]** variant caller happens by um you know a device maker like a Illumina has their own bearing collars and things like that now what our system is doing is what's called tertiary analysis which is annotating it annotating the variants that came out you can see here here's what the query looks like so the query is it figured out what the pattern should be so I describe the pattern in my API spec it determined that based on the VCF file what the chromosomes start ref and all toward they then pipe delimited them for
 
-**[24:26]** them for them just like I asked it to and then it posted it to our our API and got the response it's then taking this response and then understanding it and then re-generating it and you can see here that it's it's going ahead and providing information including you know information around classification why the classification happened all this is coming from the genome oncology knowledge base so I'm going to go ahead and stop it because we can't have multiple chats at the same time all
+**[24:26]** them for them just like I asked it to and then it posted it to our our API and got the response it's then taking this response and then understanding it and then re-generating it and you can see here that it's it's going ahead and providing information including you know information around classification why the classification happened all this is coming from the GenomOncology knowledge base so I'm going to go ahead and stop it because we can't have multiple chats at the same time all
 
 **[24:56]** right so let's go ahead and stop there and let's ask the next question so the next question I have is FDA approval so let's go ahead and ask it what if the approvals are there for BRP 600D melanoma patients so once again this is going to figure out from our schema of our open API what the interesting elements are the data elements are and then it's going to post it now our system can handle you know disease mapping to our system it can parse
 
@@ -177,7 +177,7 @@ chapters:
 
 **[29:27]** of metabase which is a open source bi tool and so here we can actually show the integration to another system in this case it could be any kind of bi tool power bi or uh Tableau or whatever your you know institution has but this is a look at a clinical genomic database basically a database of patients data and uh their genomic data this is all de-identified and you know not not any Phi whatsoever but you can see here that it's got you know the breakdown of information and less visualizations so once again just
 
-**[30:01]** another way of kind of integrating these tools together all using our knowledge graph to support those those Integrations and understanding of the information so that was the demo and so the the full demo of metabase is actually available on YouTube you can find that on the genome on College YouTube channel where I take the genie data and load it into an open source common data model called Odyssey or omop and then use metabase along with genome oncology SQL API which
+**[30:01]** another way of kind of integrating these tools together all using our knowledge graph to support those those Integrations and understanding of the information so that was the demo and so the the full demo of metabase is actually available on YouTube you can find that on the genome on College YouTube channel where I take the genie data and load it into an open source common data model called Odyssey or omop and then use metabase along with GenomOncology SQL API which
 
 **[30:34]** is a version of our knowledge graph to do those visualizations that I was just demonstrating
 
@@ -199,4 +199,4 @@ chapters:
 
 **[33:52]** so the next steps if you're not already on the plug-in development waiting list go ahead and join that you know it seems like the open AI is opening this stuff up to quite a few folks but if you're you know not on the waiting list that might be helpful if you're interested in developing this stuff and then also contact me so here's my email here's my LinkedIn I'm interested specifically in working with collaborators at cancer institutes mostly that are interested in using this stuff or at
 
-**[34:22]** least doing research on how we could use large language models to do medical q a and using knowledge graphs to ground them that's my main focus I'm also interested in maybe creating a data set or a benchmark around this technique or capability specifically in Precision oncology but genomicology is also going to be expanding on Beyond cancer as well this year so please reach out and let me know if there's any anything we can collaborate on
+**[34:22]** least doing research on how we could use large language models to do medical q a and using knowledge graphs to ground them that's my main focus I'm also interested in maybe creating a data set or a benchmark around this technique or capability specifically in Precision oncology but GenomOncology is also going to be expanding on Beyond cancer as well this year so please reach out and let me know if there's any anything we can collaborate on

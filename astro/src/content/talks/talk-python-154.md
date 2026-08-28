@@ -42,7 +42,7 @@ chapters:
 
 ### Introduction
 
-**[00:00]** Python is often used in big data situations. One of the more personal sources of large data sets is our very own genetic code. Of course, as Python grows stronger in data science, it's finding its way into biology and genetics. In this episode, you'll meet Ian Marr. He's working to help make cancer a thing of the past. We'll dig into how Python is part of that journey. This is Talk Python To Me, episode 154, recorded February 9th, 2018. Welcome to Talk Python To Me, a weekly podcast on Python, the language, the libraries, the ecosystem,
+**[00:00]** Python is often used in big data situations. One of the more personal sources of large data sets is our very own genetic code. Of course, as Python grows stronger in data science, it's finding its way into biology and genetics. In this episode, you'll meet Ian Maurer. He's working to help make cancer a thing of the past. We'll dig into how Python is part of that journey. This is Talk Python To Me, episode 154, recorded February 9th, 2018. Welcome to Talk Python To Me, a weekly podcast on Python, the language, the libraries, the ecosystem,
 
 **[00:45]** and the personalities. This is your host, Michael Kennedy. Follow me on Twitter, where I'm @mkennedy. Keep up with the show and listen to past episodes at talkpython.fm, and follow the show on Twitter via at Talk Python. This episode is brought to you by Codacy. Learn how they make code reviews better by checking out what they're offering during their segment. Ian, welcome to Talk Python. Hi, Michael. Thanks for having me on. Yeah, I'm really glad to have you on to talk about Python and biology and genomics. These are two areas
 
@@ -66,7 +66,7 @@ chapters:
 
 ### GenomOncology and Cancer Genomics
 
-**[05:05]** about all the tools and the way Python solving the problems people know. So maybe tell us a bit about what you do day to day. Yep. So I lead development for a company called genome oncology out in Cleveland. We'll talk more about Cleveland later, but so I lead our, you know, software design development, testing, and deployments were founded in 2012. And really that timing is important because really around 2011, some of the big NGS platforms, next generation sequencing platforms were, came out around there. So these are, these include things like the aluminum my seek and ion torrent. And why those are
+**[05:05]** about all the tools and the way Python solving the problems people know. So maybe tell us a bit about what you do day to day. Yep. So I lead development for a company called GenomOncology out in Cleveland. We'll talk more about Cleveland later, but so I lead our, you know, software design development, testing, and deployments were founded in 2012. And really that timing is important because really around 2011, some of the big NGS platforms, next generation sequencing platforms were, came out around there. So these are, these include things like the aluminum my seek and ion torrent. And why those are
 
 **[05:37]** important is because the human genome project, which you might've heard of kind of wrapped up between 2000, 2003. When did that start? Like late nineties, mid nineties, late nineties. It took, it took a few years for sure. And, you know, it took about $3 billion to complete it. And that was basically just mapping a first draft kind of, of the, of the human genome. And, you know, that's really, it basically says, these are all the variants that, you know, quote unquote, a typical human is made up of. And that took about $3 billion to do. And now we're talking about, you know, less than a thousand dollars.
 
@@ -256,7 +256,7 @@ chapters:
 
 ### Open Source Libraries
 
-**[41:30]** You want to talk about those a bit? One of the libraries that's out there is called Adders. And it's actually, I think, the basis of the new data classes that's in Python 3.7, right? So the new PEP that does data classes. So there was actually an original project called Adders, which is a really great project. And it lets you define your classes and you get a bunch of, you know, kind of boilerplate Python stuff for free for comparisons and, you know, string representations and things like that.
+**[41:30]** You want to talk about those a bit? One of the libraries that's out there is called attrs. And it's actually, I think, the basis of the new data classes that's in Python 3.7, right? So the new PEP that does data classes. So there was actually an original project called attrs, which is a really great project. And it lets you define your classes and you get a bunch of, you know, kind of boilerplate Python stuff for free for comparisons and, you know, string representations and things like that.
 
 **[41:55]** Right. It implements like, say, hashing correctly and all that kind of weirdness that you can overlook. Yeah. The problem I was trying to solve at the time was I wanted an immutable way of reading a YAML file, getting a nested Python object, and not having to, like, munch dictionaries, right? Because you start writing code to dictionaries and quickly things get kind of nasty with some nested dictionary references and things like that. So that's what I was looking for was a way to round trip to YAML, kind of like in Java, there's a library called Jackson that'll do that.
 
@@ -358,7 +358,7 @@ chapters:
 
 **[56:37]** All right. Well, Ian, thanks for being on the show. It was great to talk with you and learn all about this stuff. That's great. Thanks, Michael. Really glad to be here.
 
-**[56:44]** This has been another episode of Talk Python To Me. Today's guest was Ian Marr, and this episode has been brought to you by Codacy. Review less, merge faster with Codacy. Check code style, security, duplication, complexity, and coverage on every change while tracking code quality throughout your sprints. Try them at talkpython.fm/codacy, C-O-D-A-C-Y.
+**[56:44]** This has been another episode of Talk Python To Me. Today's guest was Ian Maurer, and this episode has been brought to you by Codacy. Review less, merge faster with Codacy. Check code style, security, duplication, complexity, and coverage on every change while tracking code quality throughout your sprints. Try them at talkpython.fm/codacy, C-O-D-A-C-Y.
 
 **[57:09]** Are you or a colleague trying to learn Python? Have you tried books and videos that just left you bored by covering topics point by point? Well, check out my online course, Python Jumpstart by Building 10 Apps at talkpython.fm/course to experience a more engaging way to learn Python. And if you're looking for something a little more advanced, try my Write Pythonic Code course at talkpython.fm/pythonic.
 

@@ -41,7 +41,7 @@ chapters:
 
 ### Episode Introduction
 
-**[00:00]** Do you know what custom GPTs are? They're configurable and shareable chat experiences with the name, logo, custom instructions, conversation starters, access to OpenAI tools, and custom API actions. And you can build them with Python. Ian Moyer has been doing just that and is here to share his experience building them. This is Talk Python To Me, episode 456, recorded January 22nd, 2024.
+**[00:00]** Do you know what custom GPTs are? They're configurable and shareable chat experiences with the name, logo, custom instructions, conversation starters, access to OpenAI tools, and custom API actions. And you can build them with Python. Ian Maurer has been doing just that and is here to share his experience building them. This is Talk Python To Me, episode 456, recorded January 22nd, 2024.
 
 **[00:26]** Welcome to Talk Python To Me, a weekly podcast on Python. This is your host, Michael Kennedy. Follow me on Mastodon, where I'm @mkennedy, and follow the podcast using @talkpython, both on fosstodon.org. Keep up with the show and listen to over seven years of past episodes at talkpython.fm. We've started streaming most of our episodes live on YouTube.
 
@@ -55,7 +55,7 @@ chapters:
 
 **[01:54]** Wow. Years are short. Years are short. They go by really fast. They sure do. So back then, we were talking about Python and biology and genomics.
 
-**[02:04]** And it sounds like you're still doing genetic type things and still doing Python and all that kind of stuff. For sure. Yeah, definitely. We work for a company called Genome Oncology. We do precision oncology software, helping folks make sense of genomics and trying to help cancer patients. That's awesome.
+**[02:04]** And it sounds like you're still doing genetic type things and still doing Python and all that kind of stuff. For sure. Yeah, definitely. We work for a company called GenomOncology. We do precision oncology software, helping folks make sense of genomics and trying to help cancer patients. That's awesome.
 
 **[02:21]** There's different levels of helping people with software. On one level, we probably have ad retargeting. On the other, we've got medical benefits and looking for helping people who are suffering socially or whatever. So it's got to feel good to write software that is making a difference in people's lives. That's right. I did spend a lot of the 2000s making e-commerce websites and that wasn't exactly the most fulfilling thing.
 

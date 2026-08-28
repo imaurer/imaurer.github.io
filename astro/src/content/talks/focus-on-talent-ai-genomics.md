@@ -35,15 +35,15 @@ chapters:
   - { time: "00:29:46", label: "Book recommendations" }
 ---
 
-> This transcript is unedited YouTube auto-captions with speaker labels added by hand; expect missing punctuation and mis-heard words. The captions render Ron Laneve as "Ron lenie" and Ian Maurer as "Ian Moore".
+> This transcript is unedited YouTube auto-captions with speaker labels added by hand; proper nouns corrected, otherwise expect missing punctuation and mis-heard words.
 
 ### Introduction
 
-**Ron [00:00:04]:** hello and welcome I'm your host Ron lenie each week we share career stories of tech experts and marketing mavens operational gurus and sales leaders to illustrate how they've navigated the nonlinear career path as you'll hear he's the epitome of the theme of these conversations I first met him as a candidate and sorry to date both of us but it was 1999 I think he was the first placement I made in the executive surch business so was a long time ago I've had the pleasure of working with him as a teammate
+**Ron [00:00:04]:** hello and welcome I'm your host Ron Laneve each week we share career stories of tech experts and marketing mavens operational gurus and sales leaders to illustrate how they've navigated the nonlinear career path as you'll hear he's the epitome of the theme of these conversations I first met him as a candidate and sorry to date both of us but it was 1999 I think he was the first placement I made in the executive surch business so was a long time ago I've had the pleasure of working with him as a teammate
 
 **[00:00:37]** on three separate occasions in the 2000s and then the 2010s he's been a client of mine for several years and most importantly he's become a great friend this individual is absolutely one of the smartest people I know he got his computer engineering degree both his bachelor's and Masters at Syracuse University and software development's always been the backbone of his career he's worked in Consulting he's architected e-commerce Solutions he's built and led teams he's a writer he's an accomplished speaker and over the past
 
-**[00:01:10]** decade he's been growing a platform focused on genomic analysis in the space not to mention he's a pretty funny guy too I'm thrilled to introduce to you Ian Moore CTO of genome oncology Ian thanks for being here
+**[00:01:10]** decade he's been growing a platform focused on genomic analysis in the space not to mention he's a pretty funny guy too I'm thrilled to introduce to you Ian Maurer CTO of GenomOncology Ian thanks for being here
 
 **Ian [00:01:24]:** thanks Ron and you got my name you said it right and everything that's great thanks for having me on your podcast this this is fun
 
@@ -63,11 +63,11 @@ chapters:
 
 **[00:04:18]** nine months I didn't really I just didn't like the culture it was like a big company culture I got a couple opportunities to do independent Consulting I did that for a little while and I realized I'm not good at the business side of this at the time like I don't know how to find the next client I know how I got these clients because I they basically popped up at eny but I don't know how to get the next client and I don't really want to start calling people and so I realized I got to go get a job so I got a job at another small consulting company realized that company wasn't probably working to my advantage long term and then luckily you reached out to me and said hey I know this guy Brad we're starting this new thing it's going
 
-**[00:04:51]** to be good and I said all right let's give it a try that was eeric at the time April 2004 that's where I met Brad who's currently my boss still I think I was the 10th person I think my desk was like in the walkway it wasn't even a hallway it was a walkway there was 10 of us stuck in this little room and I was in the worst possible spot but that's okay we're closing work making stuff happen grew it to I think about 60 people by 2006 we merged with brong at the time Len Pagan who started that company I think we were at 250 maybe 300 people at the time and then through a lot of successful e-commerce projects and
+**[00:04:51]** to be good and I said all right let's give it a try that was eeric at the time April 2004 that's where I met Brad who's currently my boss still I think I was the 10th person I think my desk was like in the walkway it wasn't even a hallway it was a walkway there was 10 of us stuck in this little room and I was in the worst possible spot but that's okay we're closing work making stuff happen grew it to I think about 60 people by 2006 we merged with Brulant at the time Len Pagan who started that company I think we were at 250 maybe 300 people at the time and then through a lot of successful e-commerce projects and
 
-**[00:05:23]** some other things that the company did we grew that to a thousand or so folks with the acquisition and Mer with Rosetta and then finally were acquired by Publis during that time I was working on e-commerce which was great we basically built and launched a bunch of e-commerce websites I think it was Jared for Sterling Jewelers at the time and Tractor Supply and HH Greg and and a few other websites and that was a great learning experience got to meet Emanuel Glenny and Jeff Shiner who were two of my colleagues and and learned a lot from them and a few other folks that work at genomoncology
+**[00:05:23]** some other things that the company did we grew that to a thousand or so folks with the acquisition and Mer with Rosetta and then finally were acquired by Publicis during that time I was working on e-commerce which was great we basically built and launched a bunch of e-commerce websites I think it was Jared for Sterling Jewelers at the time and Tractor Supply and HH Greg and and a few other websites and that was a great learning experience got to meet Emanuel Glenny and Jeff Shiner who were two of my colleagues and and learned a lot from them and a few other folks that work at GenomOncology
 
-**[00:05:55]** now it was a great environment for learning when Manuel started genomoncology I saw it as a great opportunity to do the next thing to learn something new e-commerce had been a fun ride but it was coming to an end and you could see that Shopify or some of these other online platforms are going to take over and run with it from there
+**[00:05:55]** now it was a great environment for learning when Manuel started GenomOncology I saw it as a great opportunity to do the next thing to learn something new e-commerce had been a fun ride but it was coming to an end and you could see that Shopify or some of these other online platforms are going to take over and run with it from there
 
 ### Follow the hard problems
 
@@ -79,7 +79,7 @@ chapters:
 
 ### Founding GenomOncology
 
-**Ron [00:07:06]:** let's talk about the last what 10 11 12 years have been with genome oncology building this product and this platform on this set of solutions to hopefully change the way we approach cancer therapy can you talk about that a little bit more and and frame up genomoncology and and especially talk about how it's evolved over that time
+**Ron [00:07:06]:** let's talk about the last what 10 11 12 years have been with GenomOncology building this product and this platform on this set of solutions to hopefully change the way we approach cancer therapy can you talk about that a little bit more and and frame up GenomOncology and and especially talk about how it's evolved over that time
 
 **Ian [00:07:27]:** sure yeah so when we started we actually didn't necessarily know what we were going to build right we knew we could do bioinformatics tools right because uh our founder had been a bioinformation before that was even a word uh so we basically process and analyze information he had read a couple papers that came out in I think 2011 that said that basically walked through the process of taking genomic data analyzing the data and then helping a patient and then they realized that it would take so it was taking so long to do it that they couldn't actually help the patient because
 
@@ -117,7 +117,7 @@ chapters:
 
 **Ian [00:15:18]:** correct yep
 
-**Ron [00:15:20]:** to try to eliminate or eradicate cancer but now the space that that genome oncology is playing in along of the developers of these drugs is the matching of the drug or the therapy or the clinical trial with the specific genomic makeup of the person and so
+**Ron [00:15:20]:** to try to eliminate or eradicate cancer but now the space that that GenomOncology is playing in along of the developers of these drugs is the matching of the drug or the therapy or the clinical trial with the specific genomic makeup of the person and so
 
 **Ian [00:15:36]:** yeah targeted therapies and immunotherapies those are really the two key things that we're managing and we're managing what's the What's called the eligibility criteria how do you like what what patient would be a good fit for this drug and which drug would be a good fit for this patient and it's a matchmaking service effectively it's at its simplest form but it's obviously way more advanced than that
 
@@ -143,7 +143,7 @@ chapters:
 
 ### AI, expert systems, and automation
 
-**Ron [00:20:25]:** so you brought up AI so let's talk about that I I couldn't have a conversation with you without bringing that up I know you've gone all in on it you're obviously applying it in pretty deep ways to genomoncology I know personally you've posted a lot of articles about it for most of us in the world there's generative Ai and chat GPT and people like me are fooling around with prompting but for you and for the next wave of of software development experts where again back to the student lens or back to the college lens how would
+**Ron [00:20:25]:** so you brought up AI so let's talk about that I I couldn't have a conversation with you without bringing that up I know you've gone all in on it you're obviously applying it in pretty deep ways to GenomOncology I know personally you've posted a lot of articles about it for most of us in the world there's generative Ai and chat GPT and people like me are fooling around with prompting but for you and for the next wave of of software development experts where again back to the student lens or back to the college lens how would
 
 **[00:20:58]** you suggest that that cohort dive in I don't know I'll say the right way to be the most productive and competitive going forward is there is there an answer to that right now
 
@@ -167,7 +167,7 @@ chapters:
 
 **[00:26:06]** 30 hours of pain and then the other thing I but on the flip side I could say oh here's a problem that would take me 40 hours but with chat GPT I can do it in four and doing something in four hours versus 40 I'm gonna do it I'll do that now I have this 4 Hour investment now I have this tool and then that tool is going to save me 40 hours or 100 hours going forward and that was a worthwhile trade so that's those are the types of things that are really exciting to me as far as just as a partner or co-pilot I hate that word now just because everyone's reusing it but that is the it's an assistant trying to build an
 
-**[00:26:39]** assistant is is really what I'm trying to do and that's what I'm actually building right now for genology is the genomoncology assistant which is I have this knowledge base I know what the truth is I have an expert they're the person that's going to be accountable they're the person that has actually make decisions a computer can't make a decision because a computer can't be accountable so you have have the human you have the knowledge base which actually is ground truth because I've had experts curate it and now the chat bot can actually just make using my knowledge Bas easier which is really the thing I want to do what do I have I have a patient what do I want I want a solution
+**[00:26:39]** assistant is is really what I'm trying to do and that's what I'm actually building right now for genology is the GenomOncology assistant which is I have this knowledge base I know what the truth is I have an expert they're the person that's going to be accountable they're the person that has actually make decisions a computer can't make a decision because a computer can't be accountable so you have have the human you have the knowledge base which actually is ground truth because I've had experts curate it and now the chat bot can actually just make using my knowledge Bas easier which is really the thing I want to do what do I have I have a patient what do I want I want a solution
 
 **[00:27:11]** for my patient to help them or I am a patient and I want a solution to help me which is really where things are going to go so given that how does the chat bot help that person understand the context of their situation and then query on knowledge based to bring back relevant true facts with evidence not just hallucinations and then help that person guide them through an open-ended open-ended is the cool part like I don't have to go make a program that can handle every single use case the chat bot the assistant really helps us do that
 

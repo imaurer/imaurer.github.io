@@ -3,7 +3,7 @@ title: "BioMCP: Biomedical Model Context Protocol"
 description: "A language model connected to trusted tools and curated data beats a stand-alone chatbot for biomedical research. This talk introduces BioMCP and demos live trial search, literature review, and variant interpretation. It closes with a look at validated agents running behind hospital firewalls."
 date: 2025-10-23
 category: bioinformatics
-tags: [biomcp, mcp, agents, precision-oncology]
+tags: [BioMCP, mcp, agents, precision-oncology]
 event: "St. Jude Children's Research Hospital"
 eventDate: 2025-10-23
 summary: "The most useful path for AI in biomedical research is not a stand-alone chatbot: it is a language model connected to trusted, well-designed tools and curated data. This talk introduces BioMCP, an open-source Model Context Protocol (MCP) server and Python library that gives assistants and agents access to biomedical sources such as ClinicalTrials.gov, PubMed/PubTator, genomic-variant databases, and FDA adverse-event data. Demos show how this approach supports literature review, trial discovery, variant interpretation, and structured research workflows. The talk closes by connecting BioMCP to rapidly improving coding agents and a future of privacy-preserving biomedical agents that run behind an institution's firewall, use validated workflows, and retain appropriate human oversight."
@@ -33,8 +33,8 @@ chapters:
 
 ## Introduction: GenomOncology and precision oncology
 
-[00:07:07] but let's get into it. so, i'm ian. uh, i lead a company called genomicology. we've been around for about 13 years. uh, my colleague annab
-[00:07:18] is actually on the call, too. she's a senior developer that's actually now working on biomcp pretty much full-time. so, you'll see her name a lot in the github repo, which is great. um and then you know what we do is really we
+[00:07:07] but let's get into it. so, i'm ian. uh, i lead a company called GenomOncology. we've been around for about 13 years. uh, my colleague annab
+[00:07:18] is actually on the call, too. she's a senior developer that's actually now working on BioMCP pretty much full-time. so, you'll see her name a lot in the github repo, which is great. um and then you know what we do is really we
 [00:07:29] generate molecular reports right so about 70, 000 this year and so those reports have knowledge on it up until now we've been doing stuff the old school way what they call good oldfashioned ai with knowledge graphs
 [00:07:40] and you know basically generating reports that say you know what are the variants what do they mean what are the uh clinical trials and therapies etc and our software is actually onrem we don't take data rights we don't do any of that
 [00:07:51] kind of weird trading of data for software uh and you know uh and obviously large language anguage models are a part of our strategy long term and i can talk about that at the end. so in
@@ -45,10 +45,10 @@ chapters:
 [00:08:46] and and i'm going to talk about coding tools as well. you might have heard of claude code. i'm sure people have heard of cursor. uh the new coding agents that are coming out and there's actually literally one every week that comes out.
 [00:08:56] uh the coding agents are actually just a really powerful paradigm for how to do software development and i'm actually seeing exactly how that's going to translate to my work and my work is you
 [00:09:06] know structuring unstructured data uh you know using that data to then you know drive decision support drive trial enablement and a bunch of other downstream use cases for our clients and you know i think that that clawed code
-[00:09:18] kind of you know agent in a loop or llm in a loop calling tools i think has a lot of legs and u and biocp is is kind of my onboarding uh tool set for people
+[00:09:18] kind of you know agent in a loop or llm in a loop calling tools i think has a lot of legs and u and BioMCP is is kind of my onboarding uh tool set for people
 [00:09:29] to kind of get get their feet wet, but then to do this stuff seriously, we're going to we're going to need a new set of tools, and i'll explain what i mean by that later. so, this is why i'm excited, right? llms plus tools. uh and
 [00:09:40] i'll talk more about my history with like my attempts at this uh over the last three years. and so, i'm going to go over pre-training, then post-training. i'm gonna, you know, do a deep dive on model context protocol,
-[00:09:51] what it is, what biomcp is. um, and then coding agents and biomedical agents kind of in this kind of this history like my errors tour effectively of of large
+[00:09:51] what it is, what BioMCP is. um, and then coding agents and biomedical agents kind of in this kind of this history like my errors tour effectively of of large
 
 ## The pre-training era
 
@@ -198,10 +198,10 @@ chapters:
 [00:33:55] dawned on me yet that both claude sonnet with 3. 5 which had just kind of come out and the 01 tool calling would actually make this better. like it just didn't
 [00:34:06] click to for me. um, and so what ended up happening is like a month or so later, people were like getting really excited about model context protocol on twitter and i was like, " okay, maybe i
 [00:34:16] should look at it again. " and then i had a colleague ask me about it and i was like, " okay, if this guy's knows about model context protocol, maybe i should really think about this. " and so i dove in and i said, " okay, let me let me think about it. " and at the time i was
-[00:34:29] considering building an mcp around genomecologies stuff, but but honestly, we're so early. um not everyone's ready for this this type of work yet. so i thought wouldn't it be more interesting
-[00:34:40] to do something kind of open source and let people play with it and understand and learn what's going on here and why this is actually exciting. and so that's what you know the brainchild was called biocp. uh so biocp is what's called an
-[00:34:52] mcp server and it calls backend servers right and actually biocp is really kind of the collection of all these things right and in this case it's actually all
-[00:35:03] of them are not local all of them are all remote so biocp is basically a collection of remote servers clinical trials. gov fda, pubmed. i'll talk about i'll talk about all the specific servers
+[00:34:29] considering building an mcp around GenomOncology's stuff, but but honestly, we're so early. um not everyone's ready for this this type of work yet. so i thought wouldn't it be more interesting
+[00:34:40] to do something kind of open source and let people play with it and understand and learn what's going on here and why this is actually exciting. and so that's what you know the brainchild was called BioMCP. uh so BioMCP is what's called an
+[00:34:52] mcp server and it calls backend servers right and actually BioMCP is really kind of the collection of all these things right and in this case it's actually all
+[00:35:03] of them are not local all of them are all remote so BioMCP is basically a collection of remote servers clinical trials. gov fda, pubmed. i'll talk about i'll talk about all the specific servers
 [00:35:14] in a moment. but basically what happens is you create a server and the server represents the data uh behind it. and the server has tools and that's what you know model context protocol has more
 [00:35:25] things than tools, resources and prompts. honestly, nobody uses anything else like they just use the tools. and i actually just saw a conversation about this on twitter yesterday which is yeah tools work. nobody wants to do anything
 [00:35:36] else. none of the clients support anything else. it's really all about tools. so that's fine. i i actually think the rest of the protocol is interesting. it's just not being represented by what are called the
@@ -219,17 +219,17 @@ chapters:
 [00:37:48] need me to. um, okay. ai research assistant, ai research agent. i just wanted to define these two terms real quick. these are my terms. there's a lot
 [00:37:58] of different terms out there. you know, people people will call agents lots of things. it's it's kind of kind of crazy how many different definitions of agents i've seen. but in my terms, ian's terms,
 [00:38:09] assistant means it's a synchronous thing. you're talking to a chatbot effectively, right? it can invoke tools. uh, usually asking for explicit permission, right? cloud desktop will always ask me, no matter how many times
-[00:38:20] i say always allow, it's just going to keep asking me, do can i use biocp? that's fine. um, but it's basically one single conversation and it's back and forth. where an agent is more asynchronous,
+[00:38:20] i say always allow, it's just going to keep asking me, do can i use BioMCP? that's fine. um, but it's basically one single conversation and it's back and forth. where an agent is more asynchronous,
 [00:38:32] meaning you give it a goal and it goes off and does the does a thing, right? it might take a minute. it might take 30 minutes. it may take 30 days. it's not not 30 days yet, but i'll talk more about what i mean about that in a in a
 [00:38:44] moment. um, but they manage the context and state over long running tasks and they're using reasoning to kind of to do stuff. so, those are my definitions. so,
 
 ## What BioMCP is
 
-[00:38:54] an assistant and an agent can be given biocp. you know, they're basically a set of tools. and what biomcp is is it's a library, a python library that has a
-[00:39:05] bunch of python functions that have been decorated with a tool decoration is what it's called, but it basically says, hey, this is a biocp tool. expose it as a
+[00:38:54] an assistant and an agent can be given BioMCP. you know, they're basically a set of tools. and what BioMCP is is it's a library, a python library that has a
+[00:39:05] bunch of python functions that have been decorated with a tool decoration is what it's called, but it basically says, hey, this is a BioMCP tool. expose it as a
 [00:39:15] public interface. and that tool has a description and it has arguments, meaning like here's what it expects, like here's the input uh fields i expect and then here and then hopefully the
 [00:39:26] description tells you why you'd want to call it. and that is then used dynamically by the assistant or the agent to do the right calls. right now, it's different than writing programs.
-[00:39:37] when you're writing programs, you're just saying, " i got these functions. i'm going to call these functions in this order and get the answers back. " well, that's not an agent or an assistant. that's just programming. biomcp is meant
+[00:39:37] when you're writing programs, you're just saying, " i got these functions. i'm going to call these functions in this order and get the answers back. " well, that's not an agent or an assistant. that's just programming. BioMCP is meant
 [00:39:47] to be dynamic in that you're going to ask it a a question or give it some data or whatever it is and then it's going to figure out through an iterative looping process what calls to make and then by
 [00:39:59] reading those results make more calls. right? that's the that's the whole beauty of this whole llm based uh way of programming and it's kind of a mind bender if you're not used to it. but so
 [00:40:10] bmcp is really, you know, a pro what i call a proxy to backend systems and there's way more now. these were the first three i did and now annab's on the team and she's knocking out uh new apis
@@ -245,7 +245,7 @@ chapters:
 [00:42:03] kind of you're squeezing out. and that becomes important especially if you're trying to do a long conversation where where you ask multiple things that you're going to get that warning at you're gonna get that error basically at the end that i i always regret which is
 [00:42:15] i'm i've ran out of space. go ahead and start a new chat. it's like ah i i just started to get to the thing that i cared about. so just be aware. so you turn on and off tools. you can do that in claw
 [00:42:25] desktop. i'll show you that in a moment. so claude desktop it's uh you just download the app. it's, you know, i think i think there's still cloud free version, but you don't get very much
-[00:42:36] usage if you have a free free account. if you have the $ 20 a month account, i'm pretty sure you can use claw desktop and you can turn on biomcp. you can turn it on locally using the biomcp uh program
+[00:42:36] usage if you have a free free account. if you have the $ 20 a month account, i'm pretty sure you can use claw desktop and you can turn on BioMCP. you can turn it on locally using the BioMCP uh program
 [00:42:48] from github. uh there's steps on how to do that. and then there's our remote server as well. and so let's go through a quick example and what why this is powerful and why this is useful, right?
 
 ## Demos: trials, literature, variants
@@ -264,7 +264,7 @@ chapters:
 [00:45:03] have a mapping, right? there's no python dictionary or anything that says active means open. it figured out that oh yeah, this means open and pembro is pembroluzamab and kitruda and oh yeah there's a there's an experimental name.
 [00:45:14] i didn't know that experimental name and it's not certainly in a database that i'm exposing this thing to. uh we do have um as a database commercial uh and that's part of you know some of the tools we built for agents. um so
 [00:45:26] interventions right it mapped pembro to this and then it mapped conditions nclc to non small cell lung carcinoma and then also threw in the acronym as well and then latin long right it figured out
-[00:45:37] cleveland ohio you know good enough let's you know pick a pick a point and we'll do 100 miles by default and so then it comes back and it brings back you know it posts that query and then biocp is what responds back with as
+[00:45:37] cleveland ohio you know good enough let's you know pick a pick a point and we'll do 100 miles by default and so then it comes back and it brings back you know it posts that query and then BioMCP is what responds back with as
 [00:45:50] tight of possible text right i tried to do a little bit of like indenting and stuff so it you know is it can understand the structure of the output but i tried to do it in such a minimal
 [00:46:00] way that i'm not consuming tokens recklessly where i'm you know basically consuming everything and then the other trick i had to do was actually for clinical trials because they are so big and there's so much content i split it
 [00:46:11] up into multiple queries so there's a searcher which basically returns back you know search results like you were you know searching for trials and you got back a page of 10 or 50 or whatever the number is uh here's the search
@@ -273,7 +273,7 @@ chapters:
 [00:46:46] filter for me, right? i would basically say, " oh, yeah, go ahead and don't show me this thing in alabama. i know that i want the i want only things in ohio, right? so these are like little optimizations i know we could add and
 [00:46:57] maybe we'll add that one. that's a pretty simple one. but you know over time um what you want to do is you just want to minimize the amount of information that comes back but minimize
 [00:47:08] the number of tokens but you also need to have the other tension here is we can't have too many functions, right? because then if we have too many functions then the llm gets confused on what to do. and i'm kind of explaining
-[00:47:18] this to you guys because the strategy by which i'm built i built biocp. you might be wanting to build your own set of tools for llms, right? and that's part of what we do as well. so if you're, you
+[00:47:18] this to you guys because the strategy by which i'm built i built BioMCP. you might be wanting to build your own set of tools for llms, right? and that's part of what we do as well. so if you're, you
 [00:47:28] know, interested, i can certainly help there. um, and then it comes back with a report. and so the report is like, hey, here's here's the active trials. i didn't tell it how to make this report. it came up with it. it read the data and
 [00:47:39] it decided this was a good report. now, i could say, oh, well, give me a table or show me something else. and that's the great thing about large language models that they're kind of infinitely adaptable in context of a of a chat
 [00:47:50] experience. and then so that's clinical trials. that's just one of the tools. the other uh key tool is uh pubmed articles. and for pubmed, i'm a big fan
@@ -282,8 +282,8 @@ chapters:
 [00:48:25] versions of the documents. they've taken all that text and they've done named entity recognition on four entity types, genes, uh drugs, diseases, variants. and
 [00:48:36] so they've highlighted all those. so all these like little boxes here, these all tie to one of those four entity types. and when you do a a search in this tool, you'll notice that it actually does an
 [00:48:47] autocomplete and it then turns it into like an entity based uh query. so this little at symbol chemical is the is the label and it's now doing an entity based
-[00:48:57] search and it just improves the relevancy of the search. so i like that so much that i actually baked it right into biocp. so biocp behind the scenes you don't do this uh behind the scenes
-[00:49:08] uh you ask a question uh the biomcp actually does have four buckets it has a bucket for uh genes drugs varants whatever uh and a keyword one so if if
+[00:48:57] search and it just improves the relevancy of the search. so i like that so much that i actually baked it right into BioMCP. so BioMCP behind the scenes you don't do this uh behind the scenes
+[00:49:08] uh you ask a question uh the BioMCP actually does have four buckets it has a bucket for uh genes drugs varants whatever uh and a keyword one so if if
 [00:49:19] one of your keywords doesn't fit in the four buckets it puts it in keywords and then what i do is i take those four buckets and quickly par in parallel i think you know call the the entity uh
 [00:49:30] resolver from pubater get the four entities back and then i use those in the search to pub to pupater and it just dramatically makes the the search engine better. it just brings the the higher
 [00:49:41] relevant stuff to the front. uh because you really want it to be in those top 10 or 20 results. otherwise, you're going to get, you know, you know, a long tale of garbage. and in pubmed's paper, they'll even say, " hey, this thing's
@@ -308,9 +308,9 @@ chapters:
 [00:53:18] right? so there's, you know, position information, there's prediction information, there's frequency information, you know, all the typical stuff. um different scores, etc. and polyfen. oh yeah, here's a here's, you
 [00:53:29] know, here's a prediction, right? deliterius. obviously, we know this a famous gene, so everyone same famous variant, so everyone knows what this stuff's about, right? but you can see down here uh
 [00:53:40] sifting through it. i could i couldn't find it, right? i don't see anything about uncle kb. and this is where i'm in the background like now, you know, you know, fixing my uh it was actually i think the the root cause was i didn't
-[00:53:51] install the latest version of biocp. i had to like i had to like clear it out and then reinstall it. um and then and and oh, here's a funny thing.
+[00:53:51] install the latest version of BioMCP. i had to like i had to like clear it out and then reinstall it. um and then and and oh, here's a funny thing.
 [00:54:02] i asked it for uncle kb stuff and it says i can't find anything about uncle kb, but let me go do a web search, right? because i had the web search turned on. so, it's going off and doing the web search. so, these are things that these chat bots will do uh that you
-[00:54:14] might not expect, right? so, you have to know if you want to just be using biocp and you just want to be using my variant info, you have to turn off the web searcher or else it'll go rogue and and start searching stuff. uh hopefully i
+[00:54:14] might not expect, right? so, you have to know if you want to just be using BioMCP and you just want to be using my variant info, you have to turn off the web searcher or else it'll go rogue and and start searching stuff. uh hopefully i
 [00:54:25] don't swear at it after this. um can you try again? right, this is me just trying again and once again i think it failed again. okay, try one more time. i just updated the server and now it gets super excited. right, so that was funny to me.
 [00:54:36] um, and you can see down here that, you know, somewhere is the anko kb stuff. i'm not going to make you all look through it, but you can tell then it goes through and gives you the results of an kb. um, and you know, other
 [00:54:47] information. let's see. i now i typed this in before i left. let's see. uh, okay. now, it's going to look for tp53 variant searcher. great.
@@ -325,20 +325,20 @@ chapters:
 [00:55:52] sourcing in a couple weeks that does this more um more deliberately and you'll see what and you'll i'm excited to show it to people and i'll i'll send
 [00:56:02] it to the team of folks i'm i'm emailing with when i when it's done. but the basic gist is this unlocked a lot of of of capabilities that i wasn't didn't really impact me until i played with
 [00:56:14] this in april, i believe, uh, and made this work. and basically what the the biomedical research assistant does is it's really a giant prompt that says, " here's all the tools. use this thing
-[00:56:26] called sequential thinking, which is another mcp that we actually just baked right into biomcp. " and what it does is it forces the llm to think through and use a thinking process, step-by - step
-[00:56:38] process. and you'll see when it's using biocp that it actually might say, " oh, i'm going to do i'm going to think for five steps or i'm going to think for 10 steps or think for 20 steps. " and as long as you don't run out of context, it's going to keep it'll keep doing the
+[00:56:26] called sequential thinking, which is another mcp that we actually just baked right into BioMCP. " and what it does is it forces the llm to think through and use a thinking process, step-by - step
+[00:56:38] process. and you'll see when it's using BioMCP that it actually might say, " oh, i'm going to do i'm going to think for five steps or i'm going to think for 10 steps or think for 20 steps. " and as long as you don't run out of context, it's going to keep it'll keep doing the
 [00:56:48] steps. it's basically a noop that doesn't really do much other than say, you know, keeps track of how many steps you've done. and and then what this deep research prompt does is it kind of shows
 [00:56:59] you what's possible, the art of the possible with regards to, you know, a prompt based program here. and what i what i'm doing is saying, hey, first take the user's question and then first
 [00:57:09] come up with a framework, right? figure out what's the right way to answer this person's question. and then it does that by saying, okay, yeah, if it's a therapeutic question, use pico, right? what have you? and then here's the
 [00:57:21] different tools. and then it says go ahead and do a broad web search and then do focus searches right and then it's asking and it's basically trying to bring back relevant information and then it synthesizes it and then you know
 [00:57:32] self-critique right once again these large language models are better if you ask it to like critique itself like just you know point out what's wrong and then fix it and then make a and then make a
-[00:57:43] brief right and here's the the rules around the brief if you were to go to um yeah, i have i i have another biomcp
+[00:57:43] brief right and here's the the rules around the brief if you were to go to um yeah, i have i i have another BioMCP
 [00:57:53] examples website uh github repo and i've only done one example. uh i probably should do more, but this example i'm saying what are the emerging treatment strategies for head and neck cancer and
 [00:58:04] so at the time uh when i first did this uh chat gpt had already come up with deep research. gemini had actually beaten them and had a deep research first and then there was an ai thing
 [00:58:15] called manis and then claude had just come out with their deep research. and so i was really into like this idea of deep research. and the deep research is basically it's going off searching a bunch of stuff and then synthesizing it
-[00:58:25] and analyzing it. and so i said, well, what if i could, you know, how do i make it to compare biocp using my prompt? how does it compare to these other four things? and and basically i use that
+[00:58:25] and analyzing it. and so i said, well, what if i could, you know, how do i make it to compare BioMCP using my prompt? how does it compare to these other four things? and and basically i use that
 [00:58:37] information to then eval. so i got the prompt after like 25 iterations of this thing. and i was like, it keeps getting better, so i'm going to keep iterating. um it finally
-[00:58:48] came up with you know and said oh yeah this this version you know biomcp plus sequential thinking plus web search gives us this output and you can see
+[00:58:48] came up with you know and said oh yeah this this version you know BioMCP plus sequential thinking plus web search gives us this output and you can see
 [00:58:58] here that it's basically a very robust you know whether it meets your needs you know uh tbd but you can always change the prompt um and it just goes through and and synthesizes a great report and
 [00:59:09] hopefully i'm not going to lie and i think that there's um you know there's charts and all this tables and stuff and then there's references, right? forcing uh claw to get it to print out the
 [00:59:20] references was the hardest part actually. um but they're all references in here. and obviously what you want to then do is give it another agent or or actually a pure python program or whatever language you like and have it parse out these references because they
@@ -349,26 +349,26 @@ chapters:
 
 ## Coding agents and what comes next
 
-[01:00:20] biomcp also, so here's my so this is like the predecessor to my whole cloud code thing that i'm going to talk about in a moment. i actually have this is actually codeex which is the opening
+[01:00:20] BioMCP also, so here's my so this is like the predecessor to my whole cloud code thing that i'm going to talk about in a moment. i actually have this is actually codeex which is the opening
 [01:00:31] product on the left and on the right is a demo slide. well, once again, demo, sorry, demo markdown that i asked uh codeex to make for me. i said, " hey, i'm
-[01:00:41] doing a demo uh today about biocp. can you go ahead and make a demo? " right? and i and i told it, make sure that all the clis work right in the command line
+[01:00:41] doing a demo uh today about BioMCP. can you go ahead and make a demo? " right? and i and i told it, make sure that all the clis work right in the command line
 [01:00:51] tool, generate the output, and then make a markdown file for me. uh and and and so i can show people how it works, right? and i can give you guys this demo file if it's interesting. um, but basically it, you know, walks you
-[01:01:03] through like how to do help, right? and then it walks you through like how to do health check. oh, so there's a health check part, right? if you're using biomcp and something's not working, uh,
+[01:01:03] through like how to do help, right? and then it walks you through like how to do health check. oh, so there's a health check part, right? if you're using BioMCP and something's not working, uh,
 [01:01:13] it can give you back, uh, an error mode, right? so, hey, hey, annab, i don't know what's going on with clinical trials. gov, but i'm getting 403s here in the health mode. maybe maybe check that out. um, and then you can see, but here
-[01:01:24] it actually works. so, there's something goofy with the health check, probably. um, so you can go, you know, do a clinical trials. gov gov query and in this case it shows biocp command line tool trial search condition melanoma
-[01:01:38] status open page size 5 and you can see that it gives you back results and i asked the snippet so it wasn't too long so you can see it here so the point is there's actually three modes for using biomcp you can go look at the code and
+[01:01:24] it actually works. so, there's something goofy with the health check, probably. um, so you can go, you know, do a clinical trials. gov gov query and in this case it shows BioMCP command line tool trial search condition melanoma
+[01:01:38] status open page size 5 and you can see that it gives you back results and i asked the snippet so it wasn't too long so you can see it here so the point is there's actually three modes for using BioMCP you can go look at the code and
 [01:01:49] use the python library so we tried to design it in such a way that the python library itself is pretty useful so you can now import bmcp and then use the trial fetcher or the variant searcher
 [01:01:59] whatever they're and then there's the command line interface. and i honestly built the command line interface for one reason only to make automated testing easier,
 [01:02:09] right? i didn't want to try to figure out how to do automated testing against um mcp tools. i was worried that that was going to be hard. so i said, " oh, i'll just make a cli as well, thankfully i did because it's quickly turning out
 [01:02:21] that cli might actually be the new mcp where people are very excited about command line interfaces because the these large language model um things know how to use clis really well as you
 [01:02:33] can see i made this demo in a few minutes um and then here's some more right get a specific trial in this case it's actually specifying the format of json right so naturally but you know uh
 [01:02:44] the default output not natural the default output is markdown but you there's a flag in here for json if you want to get json format. uh, and then there's searching across pubmed, right? and then once again, i'm it's asking for
-[01:02:55] json and you can see the different fields. um, getting getting articles from biomcp, you get the full article, uh, variance by rsid. so, searching of
+[01:02:55] json and you can see the different fields. um, getting getting articles from BioMCP, you get the full article, uh, variance by rsid. so, searching of
 [01:03:06] variance, searching for variants, retrieving variants, fda adverse effects, right? so, the fair's database is in here. uh, you can search them for pembro and it gives you back uh, the results there. so this is once again
-[01:03:18] just another way of interacting with biomcp and and then the last way is really using these agents right like i can actually build um you know whether you use lang chain or langraph or
+[01:03:18] just another way of interacting with BioMCP and and then the last way is really using these agents right like i can actually build um you know whether you use lang chain or langraph or
 [01:03:29] pyantic ai or one of these you know one of the ai type safe uh sorry typescript ai platforms or use my platform which is going to come out in a couple weeks you'll be able to build agents and give
-[01:03:40] it biocp and you can tell it to use biocp as an mcp server quote unquote or you can give it to as a cli i and you just say here's the cli and then claude code actually now has a new thing called
-[01:03:51] skills and you can create a skills uh file. oh and this would be fun to build a skills thing for biomcp. so you can say hey let's go ahead and um add a biocp skill and you can then use biomcp
+[01:03:40] it BioMCP and you can tell it to use BioMCP as an mcp server quote unquote or you can give it to as a cli i and you just say here's the cli and then claude code actually now has a new thing called
+[01:03:51] skills and you can create a skills uh file. oh and this would be fun to build a skills thing for BioMCP. so you can say hey let's go ahead and um add a BioMCP skill and you can then use BioMCP
 [01:04:02] to do all these different things whether it's you know investigate for trials or what have you. so uh hopefully that's enough of a demo for you guys. um, but i'm happy to come back to to to to more
 [01:04:13] demo mode later. and just to wrap up my slides, i got a few more slides. uh, so coding agents are a thing. and the reason why is because all these
 [01:04:23] labs have really put a lot of time into improving coding skills. and the thing that's really interesting to me is what you know, once again, these indices are are are kind of whatever. um, but claude
