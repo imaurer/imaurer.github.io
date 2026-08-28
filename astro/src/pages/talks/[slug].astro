@@ -1,0 +1,128 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import MarkdownActions from '../../components/MarkdownActions.astro';
+
+export async function getStaticPaths() {
+  const talks = await getCollection('talks');
+  return talks.map((talk) => ({ params: { slug: talk.id }, props: { talk } }));
+}
+
+const { talk } = Astro.props;
+const { Content } = await render(talk);
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+const slugify = (label: string) =>
+  label
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+---
+
+<Base
+  title={talk.data.title}
+  description={talk.data.description}
+  ogType="article"
+  ogImage={`/og/talks/${talk.id}.png`}
+>
+  <h1>{talk.data.title}</h1>
+  <p class="meta-line">
+    {talk.data.event} · {fmt(talk.data.eventDate)} · {talk.data.category}
+  </p>
+  <MarkdownActions path={`/talks/${talk.id}.md`} />
+
+  {
+    talk.data.youtubeId ? (
+      <>
+        <div class="video-slot">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${talk.data.youtubeId}`}
+            title={talk.data.title}
+            allowfullscreen
+          />
+        </div>
+        <p class="listen-link">
+          <a href={`https://www.youtube.com/watch?v=${talk.data.youtubeId}`}>
+            Watch on YouTube →
+          </a>
+        </p>
+      </>
+    ) : talk.data.episodeUrl ? (
+      <p class="listen-link">
+        <a href={talk.data.episodeUrl}>
+          Listen on {new URL(talk.data.episodeUrl).hostname.replace(/^www\./, '')} →
+        </a>
+      </p>
+    ) : (
+      <div class="video-slot">
+        <span>video coming soon</span>
+      </div>
+    )
+  }
+  {
+    talk.data.youtubeId && talk.data.episodeUrl && (
+      <p class="listen-link">
+        <a href={talk.data.episodeUrl}>
+          Episode page on {new URL(talk.data.episodeUrl).hostname.replace(/^www\./, '')} →
+        </a>
+      </p>
+    )
+  }
+
+  <p class="section-anchors">
+    <a href="#key-takeaways">Key takeaways</a>
+    <span aria-hidden="true">·</span>
+    <a href="#description">Description</a>
+    <span aria-hidden="true">·</span>
+    <a href="#transcript">Transcript</a>
+  </p>
+
+  {
+    talk.data.takeaways && (
+      <>
+        <h2 id="key-takeaways">Key takeaways</h2>
+        <ul>
+          {talk.data.takeaways.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  {
+    talk.data.summary && (
+      <>
+        <h2 id="description">Description</h2>
+        {talk.data.summary
+          .trim()
+          .split(/\n\s*\n/)
+          .map((para) => (
+            <p>{para}</p>
+          ))}
+      </>
+    )
+  }
+
+  <h2 id="transcript">Transcript</h2>
+  {
+    talk.data.chapters && (
+      <ul class="chapters">
+        {talk.data.chapters.map((c) => (
+          <li>
+            <span class="time">{c.time}</span>
+            <a href={`#${slugify(c.label)}`}>{c.label}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  <Content />
+  <p class="more-link"><a href="/talks/">More talks →</a></p>
+</Base>

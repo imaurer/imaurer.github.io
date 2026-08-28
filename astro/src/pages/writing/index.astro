@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import EntryList from '../../components/EntryList.astro';
+
+const posts = (await getCollection('writing')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const items = posts.map((p) => ({
+  href: p.data.external ?? `/writing/${p.id}/`,
+  title: p.data.title,
+  date: p.data.date,
+  draft: p.data.draft,
+  site: p.data.external
+    ? (p.data.site ?? new URL(p.data.external).hostname.replace(/^www\./, ''))
+    : undefined,
+  blurb: p.data.description,
+}));
+---
+
+<Base ogImage="/og/writing.png" title="Writing" description="Essays and notes by Ian Maurer on AI agents, bioinformatics, and building software.">
+  <h1>Writing</h1>
+  <p class="elsewhere-note">Some posts live on other sites I write for — marked with their domain.</p>
+  <EntryList items={items} />
+</Base>

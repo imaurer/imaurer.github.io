@@ -1,0 +1,32 @@
+---
+interface Props {
+  path: string;
+}
+const { path } = Astro.props;
+---
+
+<p class="md-actions">
+  <button type="button" class="copy-md" data-md={path}>Copy Markdown</button>
+  <a href={path}>View as Markdown →</a>
+</p>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-md').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const url = btn.dataset.md;
+      if (!url) return;
+      try {
+        const res = await fetch(url);
+        const text = await res.text();
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = 'copied';
+        setTimeout(() => {
+          btn.textContent = original;
+        }, 1500);
+      } catch {
+        window.location.href = url;
+      }
+    });
+  });
+</script>
