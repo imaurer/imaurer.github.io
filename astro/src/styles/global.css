@@ -460,6 +460,14 @@ main {
   color: var(--text-faint);
   min-width: 4.5rem;
 }
+.about-photo {
+  display: block;
+  width: 160px;
+  height: auto;
+  margin-top: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
 .note {
   font-size: 0.85rem;
   color: var(--text-faint);
