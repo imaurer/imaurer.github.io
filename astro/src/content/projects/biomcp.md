@@ -6,6 +6,7 @@ category: bioinformatics
 tags: [mcp, python, open-source]
 repo: "https://github.com/genomoncology/biomcp"
 status: "active"
+order: 2
 ---
 
 BioMCP is a focused biomedical tool layer for language models. It exposes structured, well-described tools for clinical-trial search, biomedical-literature retrieval, and genomic-variant lookup, designed so a model can act effectively without overwhelming its context window.

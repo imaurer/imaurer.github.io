@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import MarkdownActions from '../../components/MarkdownActions.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('projects');
@@ -9,6 +10,9 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const linkUrl = entry.data.repo ?? entry.data.link;
+const linkLabel = entry.data.repo ? 'View on GitHub →' : 'Learn more →';
+const linkWord = entry.data.repo ? 'repository' : 'website';
 ---
 
 <Base
@@ -20,13 +24,14 @@ const { Content } = await render(entry);
   <p class="meta-line">
     {entry.data.category}
     {entry.data.status && <span> · {entry.data.status}</span>}
-    {entry.data.repo && (
-      <span> · <a href={entry.data.repo}>repository</a></span>
+    {linkUrl && (
+      <span> · <a href={linkUrl}>{linkWord}</a></span>
     )}
   </p>
-  {entry.data.repo && (
+  <MarkdownActions path={`/projects/${entry.id}.md`} />
+  {linkUrl && (
     <p class="listen-link">
-      <a href={entry.data.repo}>View on GitHub →</a>
+      <a href={linkUrl}>{linkLabel}</a>
     </p>
   )}
   <Content />

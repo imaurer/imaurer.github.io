@@ -43,7 +43,9 @@ const projects = defineCollection({
   schema: z.object({
     ...base,
     repo: z.string().optional(),
+    link: z.string().url().optional(),
     status: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 

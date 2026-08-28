@@ -2,9 +2,13 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
-const projects = (await getCollection('projects')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const projects = (await getCollection('projects')).sort((a, b) => {
+  if (a.data.order != null && b.data.order != null)
+    return a.data.order - b.data.order;
+  if (a.data.order != null) return -1;
+  if (b.data.order != null) return 1;
+  return b.data.date.valueOf() - a.data.date.valueOf();
+});
 ---
 
 <Base ogImage="/og/projects.png" title="Projects" description="Open-source and in-progress projects by Ian Maurer.">
