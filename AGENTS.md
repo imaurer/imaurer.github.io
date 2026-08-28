@@ -48,6 +48,34 @@ Copy for this site follows these rules verbatim:
 [ ] Page order renders: video → anchor links → key takeaways → description → transcript
 ```
 
+### Adding a talk from a YouTube URL
+
+When the transcript does not already exist in notes, capture it first:
+
+```
+[ ] Verify identity before anything else: curl the oembed endpoint
+    (https://www.youtube.com/oembed?url=<watch-url>) and confirm the channel
+    and title match a real appearance by Ian. Re-uploads and AI-narrated
+    fakes exist; see the CI4CC fake y8E4e--jWCs below.
+[ ] Pull metadata with yt-dlp --print "%(title)s | %(upload_date)s | %(channel)s | %(duration)s".
+    The upload date is the eventDate; never guess it.
+[ ] Find the show's proper name. Check the video description and the
+    channel's playlists; the playlist title often names the show.
+[ ] Capture captions in a scratch dir:
+    yt-dlp --skip-download --write-auto-subs --write-subs --sub-langs en -- <id>
+[ ] Convert the VTT to timestamped paragraphs. Auto-caption VTTs roll text
+    up across cues, so dedupe: keep only the last new line of each cue,
+    then merge lines into ~30-second paragraphs with a [HH:MM:SS] prefix.
+[ ] For interviews, label speaker turns (host vs Ian) from context. Note
+    the caption quality in a one-line blockquote at the top of the body,
+    including any mis-heard names.
+[ ] Save the capture to notes/marketing/talks/ using that folder's naming
+    pattern (title slug + video id) and add an inventory row to its
+    README.md. notes/ is not this repo; the save is a plain file write.
+[ ] Then run the standard "Adding a Talk" checklist above and the
+    cross-cutting steps below.
+```
+
 ### Adding a Writing post
 
 ```
