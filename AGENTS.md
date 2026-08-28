@@ -46,6 +46,8 @@ Copy for this site follows these rules verbatim:
 [ ] Verify the air date from the source (episode page, YouTube), not from memory
 [ ] Verify every chapter anchor resolves to a heading in the transcript
 [ ] Page order renders: video → anchor links → key takeaways → description → transcript
+[ ] Run the transcript-keywords skill list (.agents/skills/transcript-keywords/SKILL.md)
+    over the new transcript; add any new mis-hearings you find to that list.
 ```
 
 ### Adding a talk from a YouTube URL
@@ -72,6 +74,8 @@ When the transcript does not already exist in notes, capture it first:
 [ ] Save the capture to notes/marketing/talks/ using that folder's naming
     pattern (title slug + video id) and add an inventory row to its
     README.md. notes/ is not this repo; the save is a plain file write.
+[ ] Run the transcript-keywords skill list (.agents/skills/transcript-keywords/SKILL.md)
+    over the new transcript; add any new mis-hearings you find to that list.
 [ ] Then run the standard "Adding a Talk" checklist above and the
     cross-cutting steps below.
 ```
