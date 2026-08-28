@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import MarkdownActions from '../../components/MarkdownActions.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('writing', ({ data }) => !data.external);
@@ -25,6 +26,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     · {post.data.category}
     {post.data.draft && <span class="draft-badge">draft</span>}
   </p>
+  <MarkdownActions path={`/writing/${post.id}.md`} />
   {
     post.data.tags && (
       <p>

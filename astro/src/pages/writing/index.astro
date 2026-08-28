@@ -14,7 +14,7 @@ const items = posts.map((p) => ({
   site: p.data.external
     ? (p.data.site ?? new URL(p.data.external).hostname.replace(/^www\./, ''))
     : undefined,
-  blurb: p.data.external ? (p.body ?? '').trim() : undefined,
+  blurb: p.data.description,
 }));
 ---
 

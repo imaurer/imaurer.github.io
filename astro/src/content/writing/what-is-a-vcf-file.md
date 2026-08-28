@@ -1,6 +1,6 @@
 ---
 title: "What is a Variant Call Format (VCF) File?"
-description: "An explainer on the VCF file that DNA sequencing pipelines produce."
+description: "DNA sequencing pipelines record the genetic variants they find in a VCF file. This post walks through the header, the columns, and the genotype fields."
 date: 2020-04-09
 category: bioinformatics
 tags: [VCF, genomics, sequencing]

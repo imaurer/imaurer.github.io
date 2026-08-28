@@ -1,6 +1,6 @@
 ---
 title: "What is a Custom GPT?"
-description: "Understanding OpenAI's Custom GPTs - configurable, shareable chat experiences for ChatGPT Plus subscribers."
+description: "Custom GPTs wrap ChatGPT with a name, instructions, knowledge files, and API actions. This post explains each configurable part and traces the product announcements that led to them. It also weighs the benefits and risks of building one."
 date: 2024-01-08
 category: agents
 tags: [ChatGPT, Custom GPTs, OpenAI, AI tools]

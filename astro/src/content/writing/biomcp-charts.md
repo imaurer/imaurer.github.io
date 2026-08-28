@@ -1,6 +1,6 @@
 ---
 title: "Generate Charts Easily from Study Data"
-description: "BioMCP compiles 12 chart types into its binary and renders study data as PNG, SVG, or terminal charts."
+description: "BioMCP compiles 12 chart types into its binary. One command renders cBioPortal study data as a PNG, an SVG, or a chart in the terminal."
 date: 2026-03-26
 category: bioinformatics
 tags: [BioMCP, charts, cBioPortal]

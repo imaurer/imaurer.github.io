@@ -1,6 +1,6 @@
 ---
 title: "Using grammars to constrain llama.cpp output"
-description: "How context-free grammars improve accuracy in LLM-based biomedical data extraction pipelines."
+description: "Grammars constrain llama.cpp output token by token. My biomedical extraction pipeline went from 15 to 20 percent malformed JSON to none. Extraction accuracy improved by about 25 percent."
 date: 2023-09-06
 category: agents
 tags: [llama.cpp, grammars, GBNF, data extraction, biomedical]
