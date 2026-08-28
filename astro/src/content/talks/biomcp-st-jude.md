@@ -1,6 +1,6 @@
 ---
 title: "BioMCP: Biomedical Model Context Protocol"
-description: "Why the useful path for AI in biomedical research is a language model connected to trusted tools and curated data — with live BioMCP demos for trials, literature, and variants."
+description: "A language model connected to trusted tools and curated data beats a stand-alone chatbot for biomedical research. This talk introduces BioMCP and demos live trial search, literature review, and variant interpretation. It closes with a look at validated agents running behind hospital firewalls."
 date: 2025-10-23
 category: bioinformatics
 tags: [biomcp, mcp, agents, precision-oncology]

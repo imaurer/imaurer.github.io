@@ -1,6 +1,6 @@
 ---
 title: "Building GPT Actions with FastAPI and Pydantic"
-description: "Ian Maurer joins Michael Kennedy on Talk Python To Me to explain custom GPTs and how to build GPT actions with FastAPI and Pydantic."
+description: "Ian returns to Talk Python To Me to explain custom GPTs. FastAPI and Pydantic generate the OpenAPI spec that powers a GPT's actions, and most of the work goes into endpoint and field descriptions. The episode also surveys prompt engineering, RAG, and local models as of early 2024."
 date: 2024-04-16
 category: agents
 tags: [gpt-actions, fastapi, pydantic, llm, openai]

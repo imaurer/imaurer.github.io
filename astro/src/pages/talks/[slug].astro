@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import MarkdownActions from '../../components/MarkdownActions.astro';
 
 export async function getStaticPaths() {
   const talks = await getCollection('talks');
@@ -34,32 +35,11 @@ const slugify = (label: string) =>
   <p class="meta-line">
     {talk.data.event} · {fmt(talk.data.eventDate)} · {talk.data.category}
   </p>
-
-  {
-    talk.data.summary &&
-      talk.data.summary
-        .trim()
-        .split(/\n\s*\n/)
-        .map((para) => <p>{para}</p>)
-  }
-
-  {
-    talk.data.takeaways && (
-      <>
-        <h2>Key takeaways</h2>
-        <ul>
-          {talk.data.takeaways.map((t) => (
-            <li>{t}</li>
-          ))}
-        </ul>
-      </>
-    )
-  }
+  <MarkdownActions path={`/talks/${talk.id}.md`} />
 
   {
     talk.data.youtubeId ? (
       <>
-        <h2>Video</h2>
         <div class="video-slot">
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${talk.data.youtubeId}`}
@@ -80,12 +60,9 @@ const slugify = (label: string) =>
         </a>
       </p>
     ) : (
-      <>
-        <h2>Video</h2>
-        <div class="video-slot">
-          <span>video coming soon</span>
-        </div>
-      </>
+      <div class="video-slot">
+        <span>video coming soon</span>
+      </div>
     )
   }
   {
@@ -98,23 +75,54 @@ const slugify = (label: string) =>
     )
   }
 
+  <p class="section-anchors">
+    <a href="#key-takeaways">Key takeaways</a>
+    <span aria-hidden="true">·</span>
+    <a href="#description">Description</a>
+    <span aria-hidden="true">·</span>
+    <a href="#transcript">Transcript</a>
+  </p>
+
   {
-    talk.data.chapters && (
+    talk.data.takeaways && (
       <>
-        <h2>Chapters</h2>
-        <ul class="chapters">
-          {talk.data.chapters.map((c) => (
-            <li>
-              <span class="time">{c.time}</span>
-              <a href={`#${slugify(c.label)}`}>{c.label}</a>
-            </li>
+        <h2 id="key-takeaways">Key takeaways</h2>
+        <ul>
+          {talk.data.takeaways.map((t) => (
+            <li>{t}</li>
           ))}
         </ul>
       </>
     )
   }
 
-  <h2>Transcript</h2>
+  {
+    talk.data.summary && (
+      <>
+        <h2 id="description">Description</h2>
+        {talk.data.summary
+          .trim()
+          .split(/\n\s*\n/)
+          .map((para) => (
+            <p>{para}</p>
+          ))}
+      </>
+    )
+  }
+
+  <h2 id="transcript">Transcript</h2>
+  {
+    talk.data.chapters && (
+      <ul class="chapters">
+        {talk.data.chapters.map((c) => (
+          <li>
+            <span class="time">{c.time}</span>
+            <a href={`#${slugify(c.label)}`}>{c.label}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
   <Content />
   <p class="more-link"><a href="/talks/">More talks →</a></p>
 </Base>

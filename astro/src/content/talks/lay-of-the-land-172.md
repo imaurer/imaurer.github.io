@@ -1,6 +1,6 @@
 ---
 title: "Precision Oncology, Convergence of Genomics and AI, and Improving Cancer Care"
-description: "Ian Maurer joins Jeffrey Stern on Lay of the Land to explain how GenomOncology turns genomic sequencing data into treatment options and how large language models fit into clinical decision support."
+description: "Ian joins Jeffrey Stern on this Cleveland podcast to tell the GenomOncology story. They cover the falling cost of genome sequencing and the pathology workbench that about fifty labs use. Ian explains why clinical decision support needs curated knowledge behind the language model."
 date: 2024-06-27
 category: bioinformatics
 tags: [precision-oncology, genomics, ai, cleveland, clinical-trials]

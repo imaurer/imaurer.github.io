@@ -1,6 +1,6 @@
 ---
 title: "Grounding Medical Q&A using ChatGPT Plugins and Knowledge Graphs"
-description: "A 2023 CI4CC community-call talk on why language models hallucinate on medical questions and how a curated knowledge graph, connected through ChatGPT plugins, grounds their answers."
+description: "Language models hallucinate on medical questions because they predict what an answer should sound like. This 2023 CI4CC talk connects ChatGPT to a curated knowledge graph through a plugin. The grounded answers carry source URLs, and the ungrounded ones confuse melanoma stages."
 date: 2023-06-19
 category: agents
 tags: [knowledge-graphs, llm, chatgpt-plugins, precision-oncology]

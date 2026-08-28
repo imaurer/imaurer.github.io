@@ -1,6 +1,6 @@
 ---
 title: "Python in Biology and Genomics"
-description: "Ian Maurer talks with Michael Kennedy about how GenomOncology uses Python to interpret cancer genomics data and match patients to clinical trials and therapies."
+description: "Ian talks with Michael Kennedy about Python in cancer genomics. GenomOncology uses Django, spaCy, and AsyncIO to interpret genomic variants and match patients to trials and therapies. The episode walks through the biology in plain terms first."
 date: 2018-03-07
 category: bioinformatics
 tags: [python, genomics, bioinformatics, django, asyncio]

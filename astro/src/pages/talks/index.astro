@@ -19,6 +19,8 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
             <a href={`/talks/${t.id}/`}>{t.data.title}</a>
             <br />
             <small style="color: var(--text-faint)">{t.data.event}</small>
+            <br />
+            <small class="blurb">{t.data.description}</small>
           </span>
         </li>
       ))

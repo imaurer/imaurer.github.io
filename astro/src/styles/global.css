@@ -427,6 +427,22 @@ main {
 .md-actions a:hover {
   color: var(--accent);
 }
+.section-anchors {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin: 0.5rem 0 2rem;
+}
+.section-anchors a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.section-anchors a:hover {
+  color: var(--accent);
+}
+.section-anchors span {
+  color: var(--text-faint);
+  margin: 0 0.4rem;
+}
 .chapters {
   list-style: none;
   margin: 0.5rem 0 0;

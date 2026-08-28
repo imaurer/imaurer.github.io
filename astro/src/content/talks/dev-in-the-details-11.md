@@ -1,6 +1,6 @@
 ---
 title: "Most AI Agents Are Toys. These Ones Treat Cancer"
-description: "Ian talks with Dev about building trustworthy AI agents for cancer care, the painful pre-LLM NLP era, and the open-source BioMCP project."
+description: "Ian talks with Dev about building trustworthy AI agents for cancer care. They cover the pre-LLM clinical NLP era, the open-source BioMCP project, and what separates an agent from a workflow. They close on AI and labor displacement."
 date: 2026-05-06
 category: agents
 tags: [agents, precision-oncology, biomcp, llm, healthcare, mcp]
