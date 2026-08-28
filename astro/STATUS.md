@@ -66,3 +66,16 @@ cd astro && npm install && npm run dev
 - Category pages (/writing/category/agents/ etc.) are not built yet — categories render as labels only.
 - Footer and About link to real GitHub, X, and LinkedIn profiles. Substack stays a commented-out placeholder until the account exists.
 - Cutover plan: move astro/ contents to repo root, keep CNAME, switch the GitHub Pages workflow from MkDocs to Astro.
+
+## Refinement pass (2026-08-28)
+
+- Projects: added the Precision Oncology Platform (POP) entry with an external link to genomoncology.com/our-solutions/ (verified 200). The projects schema gained optional `order` and `link` fields. The index sorts by `order` first (POP, BioMCP, PangoPup) and falls back to date. The detail page renders "View on GitHub →" for `repo` entries and "Learn more →" for `link` entries.
+- Theme toggle: the text button became a Phosphor-style inline SVG icon (sun/moon, regular weight, currentColor, MIT license). The sun shows in dark mode and the moon in light mode. The icon shows the mode a click switches to. aria-label, focus, and localStorage behavior are unchanged.
+- Writing: deleted the why-biomcp-exists draft. The homepage pinned slot now points at the We Deleted 35 Tools post on biomcp.org. Every entry carries a 2-3 sentence description and the index shows it as the blurb for local and external entries alike.
+- Talks: every talk carries a 2-3 sentence description and the index shows it under the event name.
+- Talk pages: new section order is video (or listen link / placeholder), anchor links (Key takeaways · Description · Transcript), key takeaways, a Description section holding the summary, then Transcript with the chapter links directly under its heading.
+- Papers: descriptions are now 2-3 sentence summaries of each paper's actual abstract (fetched from Europe PMC) and the index shows them.
+- About: Ian's photo (public/images/avatar.png) sits at the bottom of the page at 160px with a subtle Nord border. The photo placeholder note is gone.
+- RSS: unchanged. The feed still builds full-text and excludes external entries and drafts.
+- Markdown for agents: every local content page has a raw markdown twin at the same path with `.md` appended (Astro static endpoints, text/markdown, `# title` + one metadata line + raw body). Each page shows a Copy Markdown button and a View as Markdown link near the meta line. `public/llms.txt` is hand-written per the llmstxt.org format and every link resolves in dist. `/llms-full.txt` concatenates all content markdown in one fetch. The footer carries a muted llms.txt link near the RSS icon.
+- Repo root: AGENTS.md is now the real instruction file with content checklists; CLAUDE.md is a relative symlink to it.
