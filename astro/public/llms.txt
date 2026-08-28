@@ -12,6 +12,7 @@
 - [Most AI Agents Are Toys. These Ones Treat Cancer](https://www.imaurer.com/talks/dev-in-the-details-11.md): Dev in the Details interview on agents for cancer care and BioMCP
 - [BioMCP: Biomedical Model Context Protocol](https://www.imaurer.com/talks/biomcp-st-jude.md): St. Jude talk on grounding language models with trusted biomedical tools
 - [Precision Oncology, Convergence of Genomics and AI, and Improving Cancer Care](https://www.imaurer.com/talks/lay-of-the-land-172.md): Lay of the Land interview on the GenomOncology story
+- [The Intersection of AI and Genomic Analysis](https://www.imaurer.com/talks/focus-on-talent-ai-genomics.md): Bell Falls Search interview on a nonlinear career, GenomOncology, and AI as automation
 - [Building GPT Actions with FastAPI and Pydantic](https://www.imaurer.com/talks/talk-python-456.md): Talk Python episode on custom GPTs and OpenAPI-driven actions
 - [Grounding Medical Q&A using ChatGPT Plugins and Knowledge Graphs](https://www.imaurer.com/talks/ci4cc-chatgpt-plugins.md): CI4CC talk on grounding medical answers with a curated knowledge graph
 - [Python in Biology and Genomics](https://www.imaurer.com/talks/talk-python-154.md): Talk Python episode on the Python stack behind cancer genomics
