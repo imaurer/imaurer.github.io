@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Using grammars to constrain llama.cpp output · Ian Maurer</title><meta name="description" content="Grammars constrain llama.cpp output token by token. My biomedical extraction pipeline went from 15 to 20 percent malformed JSON to none. Extraction accuracy improved by about 25 percent."><link rel="canonical" href="https://www.imaurer.com/writing/llama-cpp-grammars/"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Ian Maurer" href="https://www.imaurer.com/rss.xml"><meta property="og:title" content="Using grammars to constrain llama.cpp output · Ian Maurer"><meta property="og:description" content="Grammars constrain llama.cpp output token by token. My biomedical extraction pipeline went from 15 to 20 percent malformed JSON to none. Extraction accuracy improved by about 25 percent."><meta property="og:type" content="article"><meta property="og:url" content="https://www.imaurer.com/writing/llama-cpp-grammars/"><meta property="og:site_name" content="Ian Maurer"><meta property="og:image" content="https://www.imaurer.com/og/writing/llama-cpp-grammars.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Using grammars to constrain llama.cpp output · Ian Maurer"><meta name="twitter:description" content="Grammars constrain llama.cpp output token by token. My biomedical extraction pipeline went from 15 to 20 percent malformed JSON to none. Extraction accuracy improved by about 25 percent."><meta name="twitter:image" content="https://www.imaurer.com/og/writing/llama-cpp-grammars.png"><script>
+      (function () {
+        var theme = 'dark';
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'light' || stored === 'dark') theme = stored;
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><link rel="stylesheet" href="/_astro/about.DC1zvza3.css"></head> <body> <header class="site-header"> <div class="container"> <a class="wordmark" href="/">Ian Maurer</a> <nav class="site-nav"> <a href="/writing/" aria-current="page"> Writing </a><a href="/talks/"> Talks </a><a href="/projects/"> Projects </a><a href="/papers/"> Papers </a><a href="/about/"> About </a> <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme"> <svg class="icon-sun" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"> <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path> </svg> <svg class="icon-moon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"> <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path> </svg> </button> </nav> </div> </header> <main> <div class="container">  <h1>Using grammars to constrain llama.cpp output</h1> <p class="meta-line"> 2023-09-06 
+· agents  </p> <p class="md-actions"> <button type="button" class="copy-md" data-md="/writing/llama-cpp-grammars.md">Copy Markdown</button> <a href="/writing/llama-cpp-grammars.md">View as Markdown →</a> </p> <script type="module">document.querySelectorAll(".copy-md").forEach(t=>{t.addEventListener("click",async()=>{const e=t.dataset.md;if(e)try{const o=await(await fetch(e)).text();await navigator.clipboard.writeText(o);const a=t.textContent;t.textContent="copied",setTimeout(()=>{t.textContent=a},1500)}catch{window.location.href=e}})});</script> <p> <span class="tag">llama.cpp</span><span class="tag">grammars</span><span class="tag">GBNF</span><span class="tag">data extraction</span><span class="tag">biomedical</span> </p><p>Context-free grammars have increased the accuracy of my large language model-based biomedical data extraction pipeline.</p>
+<p>The <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> project, which is a high-performance library for running LLMs locally on CPUs, GPUs, and Apple’s Metal graphics platform (e.g M1, M2), has <a href="https://github.com/ggerganov/llama.cpp/pull/1773">recent added</a> the support of grammars to guide and constrain the output of the LLM.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Context-free_grammar">grammar</a> is a notation that describes the valid syntax of text.</p>
+<p>The <a href="https://github.com/ggerganov/llama.cpp/tree/master/grammars">GGML grammar notation (GBNF) is documented here</a> and there are example grammars for generic <a href="https://www.notion.so/JSON-genration-with-llama-cpp-python-a5c2c3cdf4ed4dfdbc3b03ce08f38c20?pvs=21">JSON</a>, <a href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/c.gbnf">C programming language</a>, and <a href="https://github.com/ggerganov/llama.cpp/blob/master/grammars/chess.gbnf">chess moves</a>.</p>
+<p>I have gotten pretty good at crafting my grammars by hand, but these tools are helpful for getting started:</p>
+<ul>
+<li>Web UI: <a href="https://grammar.intrinsiclabs.ai/">Grammar Builder</a> (input: TS types)</li>
+<li>llama.cpp script: <a href="https://github.com/ggerganov/llama.cpp/blob/master/examples/json-schema-to-grammar.py">json-schema-to-grammar.py</a> (input: jsonschema file)</li>
+</ul>
+<p>For Python usage, this capability was exposed in the <a href="https://github.com/abetlen/llama-cpp-python">llama-cpp-python project</a> starting in version 0.1.78.</p>
+<p>To use it, there is a class called <a href="https://github.com/abetlen/llama-cpp-python/blob/main/llama_cpp/llama_grammar.py#L40C14-L40C14">LlamaGrammar</a> that is passed into your LLM instance on inference:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#81A1C1">from</span><span style="color:#D8DEE9FF"> llama_cpp</span><span style="color:#ECEFF4">.</span><span style="color:#D8DEE9FF">llama </span><span style="color:#81A1C1">import</span><span style="color:#D8DEE9FF"> Llama</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9FF"> LlamaGrammar</span></span>
+<span class="line"><span style="color:#D8DEE9FF">grammar </span><span style="color:#81A1C1">=</span><span style="color:#D8DEE9FF"> LlamaGrammar</span><span style="color:#ECEFF4">.</span><span style="color:#88C0D0">from_string</span><span style="color:#ECEFF4">(</span><span style="color:#D8DEE9FF">grammar_text</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#D8DEE9FF">llm </span><span style="color:#81A1C1">=</span><span style="color:#88C0D0"> Llama</span><span style="color:#ECEFF4">(</span><span style="color:#D8DEE9FF">model_path</span><span style="color:#ECEFF4">)</span></span>
+<span class="line"><span style="color:#D8DEE9FF">response </span><span style="color:#81A1C1">=</span><span style="color:#88C0D0"> llm</span><span style="color:#ECEFF4">(</span><span style="color:#D8DEE9FF">prompt</span><span style="color:#ECEFF4">,</span><span style="color:#D8DEE9"> grammar</span><span style="color:#81A1C1">=</span><span style="color:#D8DEE9FF">grammar</span><span style="color:#ECEFF4">)</span></span></code></pre>
+<p>LlamaGrammar also has a <code>from_file</code> helper function.</p>
+<p>Grammars work by guiding and constraining the LLM as it is predicting the next token.</p>
+<p>This feature eliminates the challenges with trying to force the model to generate well-formed JSON via prompt engineering or via post-processing on the response text.</p>
+<p>In addition to guaranteeing the output, the overall quality and accuracy of the underlying response “logic” improves as well. The grammar acts like guardrails in bowling which not only prevents gutter balls (i.e. not well-formed JSON) but also increases the likelihood of a strike (i.e. the correct answer).</p>
+<p>My biomedical data extraction pipeline extracts drug names, dosages, genomic variants, biomarkers, and clinical findings from unstructured text. Before grammars, I was seeing about 15-20% malformed JSON responses which would require either falling back to a more expensive model or complex parsing logic.</p>
+<p>With grammars, I get 100% well-formed JSON responses and the accuracy of the extracted data has improved by approximately 25%. This is likely because the model is forced to “think” in terms of the structured output format from the beginning of the generation process.</p>
+<h2 id="example-grammar">Example Grammar</h2>
+<p>Here’s a simplified version of the grammar I use for biomedical entity extraction:</p>
+<pre class="astro-code nord" style="background-color:#2e3440ff;color:#d8dee9ff; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>root ::= "{" ws "\"entities\":" ws "[" ws entity_list? ws "]" ws "}"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>entity_list ::= entity (ws "," ws entity)*</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>entity ::= "{" ws</span></span>
+<span class="line"><span>  "\"type\":" ws entity_type ws "," ws</span></span>
+<span class="line"><span>  "\"text\":" ws string ws "," ws</span></span>
+<span class="line"><span>  "\"confidence\":" ws number ws</span></span>
+<span class="line"><span>  "}"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>entity_type ::= "\"drug\"" | "\"variant\"" | "\"biomarker\"" | "\"finding\""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>string ::= "\"" ([^"\\] | "\\" .)* "\""</span></span>
+<span class="line"><span>number ::= [0-9]+ ("." [0-9]+)?</span></span>
+<span class="line"><span>ws ::= [ \t\n\r]*</span></span></code></pre>
+<p>This ensures that the output is always a valid JSON object with an “entities” array containing properly formatted entity objects.</p>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<p>There are some performance implications to consider:</p>
+<ul>
+<li>Grammar-constrained generation is slightly slower than unconstrained generation</li>
+<li>Complex grammars can significantly impact generation speed</li>
+<li>The grammar parsing adds computational overhead during inference</li>
+</ul>
+<p>However, for my use case, the benefits far outweigh the costs:</p>
+<ul>
+<li>Eliminated need for retry logic on malformed responses</li>
+<li>Reduced need for post-processing validation</li>
+<li>Improved overall pipeline reliability</li>
+<li>Better extraction accuracy</li>
+</ul>
+<h2 id="future-improvements">Future Improvements</h2>
+<p>I’m exploring several enhancements to my grammar-based approach:</p>
+<ol>
+<li><strong>Dynamic grammar generation</strong>: Creating grammars programmatically based on the input text</li>
+<li><strong>Hierarchical grammars</strong>: Using different grammars for different types of biomedical documents</li>
+<li><strong>Grammar optimization</strong>: Profiling and optimizing grammars for better performance</li>
+</ol>
+<p>If you’re working with LLMs for structured data extraction, I highly recommend experimenting with grammars. The initial investment in learning GBNF syntax pays dividends in improved reliability and accuracy.</p> <p class="more-link"><a href="/writing/">More writing →</a></p>  </div> </main> <footer class="site-footer"> <div class="container"> <div class="links"> <a href="https://github.com/imaurer" aria-label="GitHub" title="GitHub"> <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path> </svg> </a> <a href="https://x.com/imaurer" aria-label="X (Twitter)" title="X (Twitter)"> <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"> <path d="M9.52 6.78 15.48.05h-1.41L8.89 5.9 4.76.05H0l6.25 8.84L0 15.95h1.41l5.47-6.18 4.37 6.18H16L9.52 6.78Zm-1.94 2.19-.63-.88L1.92 1.08h2.17l4.07 5.66.63.88 5.29 7.36h-2.17L7.58 8.97Z"></path> </svg> </a> <a href="https://www.linkedin.com/in/ianmaurer/" aria-label="LinkedIn" title="LinkedIn"> <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"> <path d="M14.82 0H1.18C.53 0 0 .52 0 1.16v13.68C0 15.48.53 16 1.18 16h13.64c.65 0 1.18-.52 1.18-1.16V1.16C16 .52 15.47 0 14.82 0ZM4.75 13.63H2.37V5.99h2.38v7.64ZM3.56 4.95a1.38 1.38 0 1 1 0-2.75 1.38 1.38 0 0 1 0 2.75Zm10.07 8.68h-2.37V9.92c0-.89-.02-2.03-1.24-2.03-1.24 0-1.43.97-1.43 1.96v3.78H6.22V5.99H8.5v1.04h.03c.32-.6 1.09-1.24 2.25-1.24 2.4 0 2.85 1.58 2.85 3.64v4.2Z"></path> </svg> </a>  <a href="/rss.xml" aria-label="RSS feed" title="RSS feed"> <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"> <path d="M2.1 13.9a1.9 1.9 0 1 1 0-3.8 1.9 1.9 0 0 1 0 3.8ZM.2 5.4v2.5c4.36 0 7.9 3.54 7.9 7.9h2.5C10.6 10.06 5.94 5.4.2 5.4Zm0-5.2v2.5c7.23 0 13.1 5.87 13.1 13.1h2.5C15.8 7.16 8.84.2.2.2Z"></path> </svg> </a> <a class="llms-link" href="/llms.txt" title="llms.txt">llms.txt</a> </div> <p>Opinions mine — not medical advice, not my employer's positions.</p> <p>
+Text licensed
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+</p> </div> </footer> <script>
+      document
+        .getElementById('theme-toggle')
+        .addEventListener('click', function () {
+          var next =
+            document.documentElement.dataset.theme === 'dark'
+              ? 'light'
+              : 'dark';
+          document.documentElement.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+    </script> </body> </html>
