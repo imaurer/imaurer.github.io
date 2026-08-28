@@ -1,6 +1,6 @@
 ---
 title: "Cancer Informatics for Cancer Centers: Sharing Ideas on How to Build an AI-Ready Informatics Ecosystem for Radiation Oncology"
-description: "A CI4CC community paper on what cancer centers need before AI can help in the clinic."
+description: "This report distills a CI4CC symposium on precision medicine in radiation oncology. It shares lessons for data acquisition, management, representation, and sharing. Those lessons prepare radiation oncology for safe integration of AI into clinical care."
 date: 2023-09-01
 category: agents
 venue: "JCO Clinical Cancer Informatics"

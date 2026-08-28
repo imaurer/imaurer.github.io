@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import MarkdownActions from '../../components/MarkdownActions.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('papers');
@@ -30,6 +31,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
     )}
   </p>
   {entry.data.authors && <p class="meta-line">{entry.data.authors.join(', ')}</p>}
+  <MarkdownActions path={`/papers/${entry.id}.md`} />
   <Content />
   <p class="more-link"><a href="/papers/">More papers →</a></p>
 </Base>

@@ -1,6 +1,6 @@
 ---
 title: "The My Cancer Genome clinical trial data model and trial curation workflow"
-description: "How My Cancer Genome structures cancer clinical trials so software can match patients to them."
+description: "Cancer trials describe eligibility in free text. This paper presents a structured data model and curation workflow that turn trials into computable records of disease, biomarker, and treatment cohorts. Curators applied it to more than 5,000 oncology trials published on My Cancer Genome."
 date: 2020-07-01
 category: bioinformatics
 venue: "Journal of the American Medical Informatics Association (JAMIA)"

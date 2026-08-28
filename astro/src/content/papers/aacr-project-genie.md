@@ -1,6 +1,6 @@
 ---
 title: "AACR Project GENIE: Powering Precision Medicine through an International Consortium"
-description: "The registry that pools real-world cancer genomic and clinical data across major cancer centers."
+description: "AACR Project GENIE pools clinical-grade cancer genomic data and clinical outcomes from institutions worldwide into one shared registry. The first public release covered about 19,000 samples. Early analysis estimated that more than 30 percent of tumors carry a clinically actionable alteration."
 date: 2017-08-01
 category: bioinformatics
 venue: "Cancer Discovery"
