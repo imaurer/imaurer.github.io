@@ -46,12 +46,19 @@ Name → known mis-hearings the auto-captions have produced:
 - **attrs** (the Python library) → "Adders" where context means the
   library.
 - **GenomOncology** → "Genomic Oncology", "Genom Oncology", "Genome
-  Oncology", "genomoncology" (wrong casing), "genomicology",
+  Oncology", "Genomecology", "Genome Ecology", "genomoncology" (wrong casing), "genomicology",
   "gnomon collegey", and similar mis-hearings where context means the
   company.
 - **BioMCP** → "bio MCP", "biocp", and similar mis-hearings of Ian's
   open-source project name.
-- **PangoPup** → mis-hearings of this project name.
+- **PangoPup** → "Pangopup", "Pangapup", "Pengopup", "Pangolpup", "Pango Pup".
+  Leave **Pangolin** alone: that is the separate upstream model PangoPup
+  builds on, and both names appear in the same sentences.
+- **SpliceAI** → "Splice AI", "Splice-AI".
+- **GRCh38** → "GR38", "GRC38", "G R C H 38".
+- **SNV** → "S and V", "SND", "SMV" where context means the variant class.
+- **Zenodo** → "Zenoto", "Xenodo".
+- **ACMG** → "ACMJ", "A C M G" spelled out.
 - **Pydantic** → "pantic", "pedantic" where context means the Python
   library.
 - **FastAPI** → mis-hearings of this Python library name.
