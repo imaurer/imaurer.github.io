@@ -9,6 +9,7 @@
 
 ## Talks
 
+- [PangoPup: Splice Prediction We Can Ship](https://www.imaurer.com/talks/pangopup-splice-prediction.md): engineering talk on compiling four billion published splice scores into a microsecond index
 - [Most AI Agents Are Toys. These Ones Treat Cancer](https://www.imaurer.com/talks/dev-in-the-details-11.md): Dev in the Details interview on agents for cancer care and BioMCP
 - [BioMCP: Biomedical Model Context Protocol](https://www.imaurer.com/talks/biomcp-st-jude.md): St. Jude talk on grounding language models with trusted biomedical tools
 - [Precision Oncology, Convergence of Genomics and AI, and Improving Cancer Care](https://www.imaurer.com/talks/lay-of-the-land-172.md): Lay of the Land interview on the GenomOncology story
