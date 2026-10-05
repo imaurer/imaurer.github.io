@@ -3,7 +3,7 @@ title: "Coding Agent Proof Spirals"
 description: "Coding agents on long tasks sometimes start writing checks of their checks. This post describes that proof spiral, why workflow rules cause it, and how to stop it. The full skill is a gist you can drop into your own agent setup."
 date: 2026-10-05
 category: agents
-tags: [coding agents, agent design, skills, ThinkThen]
+tags: [coding agents, agent design, skills]
 draft: false
 image: /images/coding-agent-proof-spirals.png
 ---
