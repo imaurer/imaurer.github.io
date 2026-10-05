@@ -2,7 +2,7 @@
 
 2026-10-05 · https://www.imaurer.com/writing/red-green-remove-outside-in-tests/
 
-![Three onions of nested layers, from function in the middle out to the interface. In build, many scaffolding tests pile up in the inner layers. In move outward, they thin out and a behavior ring starts at the interface. In land, a full behavior ring remains with a few kept tests inside.](/images/red-green-remove-outside-in-tests.png)
+![Two panels. While building, many small scaffolding tests sit inside nested rings. Once landed, the inside is nearly empty, a bold ring of behavior tests wraps the outside, and a few edge-case tests remain.](/images/red-green-remove-outside-in-tests.png)
 
 The OpenClaw team reported deleting around 400,000 lines of their own tests without much change in code coverage. That number stuck with me. Models love writing a test for every tiny change, and they rarely clean up after themselves.
 
@@ -16,15 +16,15 @@ Sediment slows every build, and agents run the suite constantly. It breaks on re
 
 ## Describe behavior first
 
-My approach starts outside the code. Describe the behavior in the user's words. Grow tests red-green. Keep what states behavior, and remove the rest before landing.
+My approach starts outside the code. Describe the behavior in the user's words. Grow tests red-green. Keep what states behavior, and remove the rest before landing. The goal is one set of outside-in tests that checks behavior and edge cases. No duplicates, and nothing tautological.
 
 I've found BDD with Cucumber powerful for the first step. Given a customer with a paid order, when they ask for a refund, then the order shows a pending refund. Cucumber's example tables become edge-case tables. The shape matters more than the tool. Glue code between the plain-language steps and the system can become sediment too, so keep it thin or skip the tool. A brief that lists behaviors this way hands an agent its outside-in tests.
 
-## Think in layers
+## Test from the outside in
 
-Software nests like an onion. Functions serve modules, modules serve libraries, libraries serve the core, and the core serves the app. The user meets the outermost layer: a command line, an API or a screen.
+Test each behavior where the user or caller meets it: the command line, the API or the screen. Care little about the layers underneath. They may change while the behavior holds. Test something inside directly only when it owns behavior worth stating on its own, such as a parser.
 
-Test each behavior at the outermost layer that can state it. Care little about the one or two layers below. They may change while the behavior holds. Give each behavior one owning test. A bug gets one regression test at the layer that owns it. Don't repeat it at every layer the bug crosses.
+Give each behavior one owning test. A bug gets one regression test where it shows. Don't repeat it at every layer the bug crosses.
 
 ## Red, green, remove
 
@@ -39,6 +39,10 @@ The four kinds that stay:
 - **Edge-case tables**: boundaries, empty input, bad input and limits in one table.
 - **Contract checks** on what others depend on: schemas, output formats, secrecy, releases.
 - **Regression tests** that failed on the code before the fix.
+
+## Coverage counts lines, not claims
+
+Line coverage tells you which code ran during the tests. It doesn't tell you whether any test would notice that code going wrong. A tautological test runs the code and asserts what its setup already made true. Coverage goes up, and nothing is checked. So treat coverage as a map of what's untested, never as proof of what's tested. Mutation testing asks the better question: if this code broke, would a test fail?
 
 ## What about deleting all your unit tests?
 
