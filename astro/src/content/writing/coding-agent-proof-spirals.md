@@ -51,7 +51,7 @@ Heavy checking isn't always a spiral. Releases, migrations and security changes 
 
 ## The skill
 
-I wrote this up as a skill you can drop into your own agent setup: [proof-spiral.md](GIST_URL). It covers how to notice, diagnose, address and prevent a spiral. It also warns about itself. The skill must not become one more layer of rules.
+I wrote this up as a skill you can drop into your own agent setup: [proof-spiral.md](https://gist.github.com/imaurer/79c1b9f3bef3fea0f4c99f9342905a5c). It covers how to notice, diagnose, address and prevent a spiral. It also warns about itself. The skill must not become one more layer of rules.
 
 ## Also: introducing ThinkThen
 
