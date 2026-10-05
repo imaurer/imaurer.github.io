@@ -69,4 +69,4 @@ The command prints `true` and exits 0 for yes, 1 for no and 3 for not sure. A sh
 
 [Watch on YouTube →](https://www.youtube.com/watch?v=YbzrlpAyCV4)
 
-The full project lives at [github.com/botassembly/thinkthen](https://github.com/botassembly/thinkthen).
+Read the docs at [thinkthen.dev](https://thinkthen.dev). The code lives at [github.com/botassembly/thinkthen](https://github.com/botassembly/thinkthen).
