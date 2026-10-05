@@ -24,7 +24,7 @@ These are the signs I watch for:
 - The agent builds tools to check its checks: receipt checkers, fingerprints, provenance chains.
 - I ask for status, and the agent describes proofs. It doesn't tell me what works.
 
-The vocabulary gives it away too. Frozen, sealed, byte for byte, fresh, exact receipt. When those words show up in status lines that keep ending in "remains pending", I go look.
+Watch the status lines too. When they fill with words like frozen, sealed, byte for byte and exact receipt, and keep ending in "remains pending", I go look.
 
 ## Why it happens
 
@@ -38,7 +38,7 @@ Checking can also stand in for access. An agent that can't reach the real enviro
 
 ## How to stop it
 
-Start with one question: **What decision does this proof change?** If the answer is none, the proof is ceremony. This question stops a spiral earliest.
+Start with one question: **What decision does this proof change?** If the answer is none, the proof is ceremony. In the spirals I've seen, this question would have stopped them earliest.
 
 Then fix the workflow:
 
