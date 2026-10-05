@@ -4,6 +4,7 @@
 
 ## Writing
 
+- [Coding Agent Proof Spirals](https://www.imaurer.com/writing/coding-agent-proof-spirals.md): how coding agents fall into writing checks of their checks, and how to stop it
 - [Using grammars to constrain llama.cpp output](https://www.imaurer.com/writing/llama-cpp-grammars.md): grammars cut malformed JSON to zero in a biomedical extraction pipeline
 - [What is a Custom GPT?](https://www.imaurer.com/writing/what-is-a-custom-gpt.md): the parts, history, benefits, and risks of OpenAI's Custom GPTs
 
