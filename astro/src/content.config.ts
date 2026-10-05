@@ -19,6 +19,7 @@ const writing = defineCollection({
     ...base,
     external: z.string().url().optional(),
     site: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 

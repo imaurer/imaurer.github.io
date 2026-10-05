@@ -17,7 +17,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
   title={post.data.title}
   description={post.data.description}
   ogType="article"
-  ogImage={`/og/writing/${post.id}.png`}
+  ogImage={post.data.image ?? `/og/writing/${post.id}.png`}
 >
   <h1>{post.data.title}</h1>
   <p class="meta-line">
