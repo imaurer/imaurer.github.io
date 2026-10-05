@@ -4,7 +4,7 @@
 
 ![Three onions of nested layers, from function in the middle out to the interface. In build, many scaffolding tests pile up in the inner layers. In move outward, they thin out and a behavior ring starts at the interface. In land, a full behavior ring remains with a few kept tests inside.](/images/red-green-remove-outside-in-tests.png)
 
-The OpenClaw team reported deleting around 400,000 lines of their own tests without much change in code coverage. That number stuck with me. Models love writing a test for every tiny change, and nobody cleans up after them.
+The OpenClaw team reported deleting around 400,000 lines of their own tests without much change in code coverage. That number stuck with me. Models love writing a test for every tiny change, and they rarely clean up after themselves.
 
 OpenClaw published the [test-audit skill](https://github.com/openclaw/openclaw/blob/main/.agents/skills/test-audit/SKILL.md) behind that cleanup. It gates new tests with four questions and sweeps the existing pile for junk. It's useful, and I borrowed its questions. But it reacts. The better move is to stop making the pile.
 
@@ -18,7 +18,7 @@ Sediment slows every build, and agents run the suite constantly. It breaks on re
 
 My approach starts outside the code. Describe the behavior in the user's words. Grow tests red-green. Keep what states behavior, and remove the rest before landing.
 
-I've found BDD with Cucumber powerful for the first step. Given a refund request, when the agent reads it, then it answers yes. Cucumber's example tables become edge-case tables. The shape matters more than the tool. Glue code between the plain-language steps and the system can become sediment too, so keep it thin or skip the tool. A brief that lists behaviors this way hands an agent its outside-in tests.
+I've found BDD with Cucumber powerful for the first step. Given a customer with a paid order, when they ask for a refund, then the order shows a pending refund. Cucumber's example tables become edge-case tables. The shape matters more than the tool. Glue code between the plain-language steps and the system can become sediment too, so keep it thin or skip the tool. A brief that lists behaviors this way hands an agent its outside-in tests.
 
 ## Think in layers
 
@@ -49,3 +49,21 @@ A lot of people now talk about deleting their unit tests to speed things up. The
 I wrote this up as a skill you can drop into your own agent setup: [outside-in-tests.md](https://gist.github.com/imaurer/ac31f596bcfd7f46afe1c7dceedcba21). It pairs with OpenClaw's test-audit. Theirs cleans up the pile, and this one keeps it from forming. It also pairs with my earlier post on [coding agent proof spirals](/writing/coding-agent-proof-spirals/).
 
 When someone says "we deleted all our unit tests and nothing broke", ask how they would know.
+
+## Also: introducing ThinkThen
+
+I recently introduced ThinkThen. It answers typed questions about text and returns `true`, `false`, a label or a number. A failed call never looks like an answer. Use it to gate a script, label records, or grade answers in an eval.
+
+```sh
+thinkthen decide 'Does the customer ask for money back?' < message.txt
+```
+
+The command prints `true` and exits 0 for yes, 1 for no and 3 for not sure. A shell `if` can branch on it. It has ten functions, such as `decide`, `choose`, `tag` and `score`. They run across 25 surfaces: the command line, a Rust crate, language bindings from Python to COBOL, and SQL extensions for DuckDB, SQLite and PostgreSQL.
+
+<div class="video-slot">
+  <iframe src="https://www.youtube-nocookie.com/embed/YbzrlpAyCV4" title="Introducing ThinkThen" allowfullscreen></iframe>
+</div>
+
+[Watch on YouTube →](https://www.youtube.com/watch?v=YbzrlpAyCV4)
+
+Read the docs at [thinkthen.dev](https://thinkthen.dev). The code lives at [github.com/botassembly/thinkthen](https://github.com/botassembly/thinkthen).
