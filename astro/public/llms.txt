@@ -4,6 +4,7 @@
 
 ## Writing
 
+- [Why I Built ThinkThen](https://www.imaurer.com/writing/why-i-built-thinkthen.md): why Jev changed the economics of asking questions about text, and the ten functions ThinkThen wraps around it
 - [Red, Green, Remove: Outside-In Tests for Coding Agents](https://www.imaurer.com/writing/red-green-remove-outside-in-tests.md): describe behavior first, grow tests red-green, and remove the scaffolding before landing
 - [Coding Agent Proof Spirals](https://www.imaurer.com/writing/coding-agent-proof-spirals.md): how coding agents fall into writing checks of their checks, and how to stop it
 - [Using grammars to constrain llama.cpp output](https://www.imaurer.com/writing/llama-cpp-grammars.md): grammars cut malformed JSON to zero in a biomedical extraction pipeline
@@ -11,6 +12,7 @@
 
 ## Talks
 
+- [Introducing ThinkThen](https://www.imaurer.com/talks/introducing-thinkthen.md): launch talk on ThinkThen, Jev, Beatles Bench and retrieval-augmented decisions
 - [PangoPup: Splice Prediction We Can Ship](https://www.imaurer.com/talks/pangopup-splice-prediction.md): engineering talk on compiling four billion published splice scores into a microsecond index
 - [Most AI Agents Are Toys. These Ones Treat Cancer](https://www.imaurer.com/talks/dev-in-the-details-11.md): Dev in the Details interview on agents for cancer care and BioMCP
 - [BioMCP: Biomedical Model Context Protocol](https://www.imaurer.com/talks/biomcp-st-jude.md): St. Jude talk on grounding language models with trusted biomedical tools

@@ -62,6 +62,14 @@ Name → known mis-hearings the auto-captions have produced:
 - **Pydantic** → "pantic", "pedantic" where context means the Python
   library.
 - **FastAPI** → mis-hearings of this Python library name.
+- **ThinkThen** → "type think", "think then", "ThinkThin".
+- **Jev** → "Jeff", "Jeb" where context means TypeSafe's model.
+- **System One** (TypeSafe's API shape) → "system one", "System 1".
+- **tev1** (Ollama's decision model, beside Nimble) → "T one", "tev one".
+- **GLM-5.3 Flash** → "GLM 53 flash", "GLM 5.3 flash".
+- **BotAssembly** → "bot assembly", "Bot Assembly".
+- **Beatles Bench** → "Beatles bench", "Beatle's Bench".
+- **Liquid d1** → "Liquid D1", "d one".
 
 ## After fixing a transcript
 
